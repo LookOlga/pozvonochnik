@@ -1,0 +1,23 @@
+.logo {
+    &__link {
+        display: flex;
+        align-items: center;
+        svg {
+            width: 3.5rem;
+            height: 3.5rem;
+            margin-right: 1rem;
+        }
+        strong {
+            white-space: nowrap;
+        }
+    }
+}
+
+@media (min-width: 769px) {
+    .logo {
+        margin-right: 10%;
+    }
+}
+
+
+

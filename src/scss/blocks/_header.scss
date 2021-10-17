@@ -1,0 +1,12 @@
+.header {
+    padding: 2rem 0;
+}
+
+@media(max-width: 769px) {
+    .header {
+        &__wrapper {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}

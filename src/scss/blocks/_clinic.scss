@@ -1,0 +1,11 @@
+@media(max-width: 769px) {
+    .clinic {
+        position: relative;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        &__name {
+            margin-right: 1.5rem;
+        }
+    }
+}

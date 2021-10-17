@@ -1,0 +1,21 @@
+.btn-link {
+    position: relative;
+    font-size: 1.4rem;;
+    text-decoration: underline;
+}
+
+.btn {
+    display: block;
+    padding: 1rem 1.5rem;
+    border-radius: 5px;
+    transition: 0.2 ease;
+    &--primary {
+        background-color: $secondary-text;
+        color: #fff;
+        &:hover {
+            background-color: darken($secondary-text, 7%);
+        }
+    }
+    
+
+}

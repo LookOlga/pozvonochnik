@@ -1,0 +1,15 @@
+@media(max-width: 769px) {
+    .text-accordion {
+        height: 255px;
+        overflow: hidden;
+        transition: height 700ms ease-in-out;
+    }
+}
+
+@media(max-width: 480px) {
+    .text-accordion {
+        height: 170px;
+        overflow: hidden;
+        transition: height 700ms ease-in-out;
+    }
+}

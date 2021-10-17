@@ -1,0 +1,43 @@
+.about {
+    &__author {
+        margin-top: 1rem;
+    }
+
+}
+
+@media (min-width: 769px) {
+    .about {
+        &__container {
+            display: flex;
+        }
+        &__slider-wrap {
+            width: 50%;
+            margin-right: 5rem;
+        }
+    }
+}
+
+@media (max-width: 769px) {
+    .about {
+        &__slider {
+            margin-bottom: 6rem;
+        }
+
+        &__btn {
+            margin-top: 1rem;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .about {
+        &__slider {
+            height: 260px;
+        }
+
+        &__img {
+            height: 100%;
+        }
+
+    }
+}

@@ -1,0 +1,20 @@
+.stat {
+    display: flex;
+    &__item {
+        flex: 1 1 100px;
+        margin-right: 2rem;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    &__num {
+        font-size: 2.8rem;
+        margin-bottom: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .stat {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,57 @@
+@media (min-width: 769px) {
+    .owl-carousel {
+        position: relative;
+    }
+
+    .about__slider {
+        position: sticky;
+        top: 15px;
+    }
+    
+    .owl-nav .owl-next, .owl-nav .owl-prev {
+        position: absolute;
+        top: 20%;
+        z-index: 999;
+        font-size: 5rem !important;
+        line-height: 0;
+      }
+
+      .promotions__slider .owl-nav .owl-next {
+        right: -20px;
+      }
+
+      .promotions__slider .owl-nav .owl-prev {
+       left: -20px;
+    }
+
+    .reviews__slider .owl-nav .owl-next {
+        right: -5rem;
+      }
+
+    .reviews__slider .owl-nav .owl-prev {
+       left: -5rem;
+    }
+      
+}
+
+
+@media (max-width: 992px) {
+    .owl-dots {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2rem;
+    }
+    .owl-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        border: 1px solid $secondary-text !important;
+        margin: 5px;
+    }
+
+    .owl-dot.active {
+        background-color: $secondary-text !important;
+    }
+}
+

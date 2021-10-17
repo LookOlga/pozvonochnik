@@ -1,0 +1,45 @@
+@media (max-width: 769px) {
+    .burger {
+        position: relative;
+        width: 3rem;
+        height: 16px;
+        z-index: 1000;
+        padding: 10px;
+        span {
+            position: absolute;
+            left: 0;
+            display: block;
+            width: 26px;
+            height: 2px;
+            background-color: $primary-text;
+            transition: all .3s ease;
+            &:nth-child(1) {
+                top: 0;
+            }
+            &:nth-child(2) {
+                top: 50%;
+            }
+            &:nth-child(3) {
+                top: 100%
+            }
+        }
+    }
+
+    body.menu-active {
+        .burger {
+            span {
+                &:nth-child(1) {
+                    top: 50%;
+                    transform: rotate(45deg);
+                }
+                &:nth-child(2) {
+                    transform: scale(0);
+                }
+                &:nth-child(3) {
+                    top: 50%;
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+    }
+}

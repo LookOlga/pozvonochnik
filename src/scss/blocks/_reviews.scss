@@ -1,0 +1,38 @@
+.reviews {
+    &__slider {
+        margin: 3rem 0 5rem;
+    }
+    &__date {
+        display: block;
+    }
+    &__name, &__date{
+        margin-bottom: 1rem;
+    }
+    &__name {
+        font-weight: 600;
+    }
+}
+
+@media(min-width: 992px) {
+    .reviews {
+        &__slider-wrap {
+            padding: 0 5rem;
+        }
+    }
+}
+
+@media (min-width: 769px) {
+    .reviews {
+        &__wrapper {
+            display: flex;
+            justify-content: space-between;
+        }
+        &__form-wrap{
+            margin-left: 5rem;
+        }
+        &__slider-wrap, &__form-wrap {
+            width: 50%;
+        }
+    }
+}
+

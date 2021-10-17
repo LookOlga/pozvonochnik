@@ -1,0 +1,29 @@
+@media(max-width: 769px) {
+    .dropdown {
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 10000;
+        transition: all .3s ease-in-out;
+        &--clinics, &--phones {
+            top: 5rem;
+            background-color: #fff;
+            border: 1px solid $primary-bg;
+            margin-top: 5px;
+        }
+    }
+
+    body.dropdown-clinics-active {
+        .dropdown--clinics {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+ body.dropdown-phones-active {
+     .dropdown--phones {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}

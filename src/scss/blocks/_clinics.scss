@@ -1,0 +1,49 @@
+.clinics {
+    display: flex;
+    flex-wrap: wrap;
+    &__item {
+        margin-right: 1rem;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+@media (min-width: 769px) {
+    .clinics {
+        width: 95%;
+        &__item {
+            display: flex;
+            margin-bottom: 1rem;
+            margin-right: 5%;
+            svg {
+                width: 2rem;
+                height: 2rem;
+                color: $primary-bg;
+                margin-right: 5px;
+            }
+        }
+        &__item.active {
+            font-weight: 600;
+            svg {
+                color: $primary-text;
+            }
+        }
+    }
+}
+
+@media (max-width: 769px) {
+    .clinics {
+        flex-direction: column;
+        &__link {
+            padding: 8px 10px;
+            border-bottom: 1px solid $primary-bg;
+        }
+    }
+    // .clinics__item.active {
+    //     display: flex;
+    // }
+    // .clinics__item.active > .clinics__link {
+    //     border-bottom: transparent;
+    // }
+}

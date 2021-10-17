@@ -1,0 +1,16 @@
+.social {
+    display: flex;
+    &__item {
+        margin-right: 1rem;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &__link {
+        svg {
+            width: 3rem;
+            height: 3rem;
+        }
+    }
+}

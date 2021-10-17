@@ -1,0 +1,9 @@
+.promotions {
+    &__container {
+    overflow: hidden;
+    }
+    &__slide {
+        padding: 1rem;
+        border: 1px solid $primary-bg;
+    }
+}
