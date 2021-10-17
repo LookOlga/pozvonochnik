@@ -29,6 +29,7 @@ let path = {
 
 let { src, dest } = require('gulp'),
 	gulp = require('gulp'),
+	ghPages = require('gh-pages'),
 	browsersync = require("browser-sync").create(),
 	fileinclude = require("gulp-file-include"),
 	del = require("del"),
@@ -146,7 +147,7 @@ function clean(params) {
 }
 
 function deploy(cb) {
-    ghPages.publish(path.join(process.cwd(), './dist'), cb);
+    ghPages.publish('dist', cb);
 }
 
 let fontsBuild = gulp.series(fonts);
