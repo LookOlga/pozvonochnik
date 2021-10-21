@@ -11,6 +11,12 @@
         svg {
             width: 3rem;
             height: 3rem;
+            transition: 0.33 ease;
+        }
+        &:hover {
+            svg {
+                color: $secondary-text;
+            }
         }
     }
 }

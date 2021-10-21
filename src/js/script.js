@@ -1,31 +1,36 @@
 'use strict';
 
-//dropdown clinics
-const clinicBtn = document.querySelector('.clinic__btn');
+//dropdown clinics / phones
 
-clinicBtn.addEventListener('click', () => {
-  document.body.classList.toggle('dropdown-clinics-active');
-})
+const dropdownActive = (btnSelector, activeClass) => {
+  const btn = document.querySelector(btnSelector);
+  if(!btn) return false;
+  btn.addEventListener('click', () => {
+    document.body.classList.toggle(activeClass);
+  })
+}
 
-//dropdown phones
-const phonesBtn = document.querySelector('.top-head__btn');
-
-phonesBtn.addEventListener('click', () => {
-  document.body.classList.toggle('dropdown-phones-active');
-})
+dropdownActive('.clinic__btn', 'dropdown-clinics-active');
+dropdownActive('.top-head__btn', 'dropdown-phones-active');
 
 //burger-menu
-const burger = document.querySelector('.burger');
+const burger = (burgerSelector, classActive) => {
+  const burger = document.querySelector(burgerSelector);
+  burger.addEventListener('click', () => {
+    document.body.classList.toggle(classActive);
+  })
+}
 
-burger.addEventListener('click', () => {
-  document.body.classList.toggle('menu-active');
-})
+burger('.burger', 'menu-active');
+
 
 //text-accordion
 
-const textAccordion = document.querySelector('.text-accordion'),
-  btnShow = document.querySelector('.btn-show'),
+const textAccordion = document.querySelector('.text-accordion');
+if(!textAccordion) return false;
+  const btnShow = document.querySelector('.btn-show'),
   startHeight = textAccordion.style.height;
+
 let expanded = false;
 
 btnShow.addEventListener('click', () => {
@@ -144,34 +149,73 @@ $(function () {
 
 const servicesAccordion = (listSelector, listItemsSelector) => {
   const list = document.querySelectorAll(listSelector);
+  if(!list) return false;
   const listItems = document.querySelectorAll(listItemsSelector);
 
   listItems.forEach((item, i) => {
     item.addEventListener('click', e => {
       e.preventDefault();
+      e.stopPropagation();
       const target = e.target;
       const listItem = list[i];
       const listHeight = window.getComputedStyle(listItem).height;
-
+      const listItemScrollHeight = () => {
+        listItem.style.height = `${listItem.scrollHeight}px`;
+      }
       if (listHeight === '0px') {
-        listItem.style.height = `${listItem.scrollHeight}px`;
+        listItemScrollHeight();
       } else {
-        listItem.style.height = `${listItem.scrollHeight}px`;
+        listItemScrollHeight();
         listItem.style.height = '0';
       }
       target.children[0].classList.toggle('rotateArrow');
-    });
+    }, true);
   });
 };
 
 servicesAccordion('.services__subitems', '.services__item.has-subitem > .services__link');
 
+//map popup
 
+const mapPopup = (mapSelector, mapBtnClass) => {
+  const map = document.querySelector(mapSelector);
+  if(!map) return false;
+  let visible = false;
+  map.addEventListener('mouseover', (e) => {
+    mapPopupOnOff(e, true);
+  })
 
+  map.addEventListener('mouseout', (e) => {
+    mapPopupOnOff(e, false);
+  })
 
+  const mapPopupOnOff = (e, visibilityValue) => {
+    const target = e.target;
+    const mapBtn = target.parentElement;
+    if (!mapBtn) return false;
 
+    visible = visibilityValue;
 
+    if (mapBtn.classList.contains(mapBtnClass)) {
+      const popupId = mapBtn.getAttribute('data-popup');
+      const mapPopup = document.querySelector(`#${popupId}`);
+      if (visible) {
+        let coordX = e.pageX;
+        let coordY = e.pageY;
+        if (mapPopup) {
+          mapBtn.classList.add('active');
+          mapPopup.style.top = coordY + 'px';
+          mapPopup.style.left = coordX + 'px';
+          mapPopup.classList.add('visible');
+        } else {
+          return false;
+        }
+      } else {
+        mapPopup.classList.remove('visible');
+        mapBtn.classList.remove('active');
+      }
+    }
+  }
+}
 
-
-
-  
+mapPopup('.map', 'map__btn');

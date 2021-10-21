@@ -5,7 +5,9 @@
         visibility: hidden;
         z-index: 10000;
         transition: all .3s ease-in-out;
-        &--clinics, &--phones {
+
+        &--clinics,
+        &--phones {
             top: 5rem;
             background-color: #fff;
             border: 1px solid $primary-bg;
@@ -20,8 +22,8 @@
         }
     }
 
- body.dropdown-phones-active {
-     .dropdown--phones {
+    body.dropdown-phones-active {
+        .dropdown--phones {
             opacity: 1;
             visibility: visible;
         }

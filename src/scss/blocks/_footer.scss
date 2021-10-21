@@ -13,6 +13,11 @@
     &__item {
         margin-bottom: 1rem;
     }
+    &__link {
+        &:hover {
+           text-decoration: underline;
+        }
+    }
     &__bottom {
         display: flex;
         margin-top: 3rem;

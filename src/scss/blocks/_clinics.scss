@@ -21,6 +21,13 @@
                 height: 2rem;
                 color: $primary-bg;
                 margin-right: 5px;
+                transition: 0.33s ease;
+            }
+            &:hover {
+                text-decoration: underline;
+                svg {
+                    color: $primary-text;
+                }
             }
         }
         &__item.active {
