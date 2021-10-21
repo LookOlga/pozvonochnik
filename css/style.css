@@ -275,6 +275,18 @@ body.menu-active .overlay {
   padding: 7rem 0;
 }
 
+.head-map__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.head-map__title {
+  margin-bottom: 15rem;
+}
+
 .phone-link {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -401,7 +413,7 @@ body.menu-active .overlay {
 }
 
 .stat__num {
-  font-size: 2.8rem;
+  font-size: 4.5rem;
   margin-bottom: 5px;
 }
 
@@ -460,6 +472,10 @@ body.menu-active .overlay {
   margin-bottom: 1rem;
 }
 
+.footer__link:hover {
+  text-decoration: underline;
+}
+
 .footer__bottom {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -488,6 +504,70 @@ body.menu-active .overlay {
 .social__link svg {
   width: 3rem;
   height: 3rem;
+  -webkit-transition: 0.33 ease;
+  -o-transition: 0.33 ease;
+  transition: 0.33 ease;
+}
+
+.social__link:hover svg {
+  color: #367b87;
+}
+
+.map__popup {
+  position: absolute;
+  max-width: 250px;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 10px;
+  border: 1px solid #e2f3fa;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.33s ease 100ms;
+  -o-transition: all 0.33s ease 100ms;
+  transition: all 0.33s ease 100ms;
+}
+
+.map__name,
+.map__day {
+  font-weight: 600;
+}
+
+.map__name,
+.map__address {
+  margin-bottom: 1rem;
+}
+
+.map__name {
+  font-weight: 1.6rem;
+}
+
+.map__btn {
+  cursor: pointer;
+  -webkit-transition: 0.33s ease 200ms;
+  -o-transition: 0.33s ease 200ms;
+  transition: 0.33s ease 200ms;
+}
+
+.map__timetable {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.map__timetable:last-child {
+  color: tomato;
+}
+
+.map__popup.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.map__btn.active path {
+  fill: #ff7b0f;
 }
 
 html {
@@ -565,6 +645,10 @@ section {
     margin-right: 0;
   }
 
+  .menu__link:hover {
+    text-decoration: underline;
+  }
+
   .menu__list {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -592,6 +676,17 @@ section {
     height: 2rem;
     color: #e2f3fa;
     margin-right: 5px;
+    -webkit-transition: 0.33s ease;
+    -o-transition: 0.33s ease;
+    transition: 0.33s ease;
+  }
+
+  .clinics__item:hover {
+    text-decoration: underline;
+  }
+
+  .clinics__item:hover svg {
+    color: #002c40;
   }
 
   .clinics__item.active {
@@ -698,6 +793,10 @@ section {
     margin: 0 2rem 3rem;
   }
 
+  .services__sublink:hover {
+    text-decoration: underline;
+  }
+
   .footer {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
@@ -730,6 +829,27 @@ section {
 @media (min-width: 992px) {
   .reviews__slider-wrap {
     padding: 0 5rem;
+  }
+}
+
+@media (min-width: 1100px) {
+  .head-map__text {
+    width: 45%;
+  }
+
+  .map {
+    width: 55%;
+  }
+}
+
+@media (max-width: 1100px) {
+  .head-map__text {
+    width: 100%;
+    margin-bottom: 6rem;
+  }
+
+  .map {
+    width: 100%;
   }
 }
 
