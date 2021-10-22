@@ -88,12 +88,12 @@ $(function () {
         nav: false,
       },
       769: {
-        items: 2,
+        items: 1,
         nav: false
 
       },
       1200: {
-        items: 3
+        items: 2
       }
     }
   });

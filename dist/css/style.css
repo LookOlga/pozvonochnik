@@ -757,7 +757,7 @@ section {
   .owl-nav .owl-next,
   .owl-nav .owl-prev {
     position: absolute;
-    top: 20%;
+    top: 25%;
     z-index: 999;
     font-size: 5rem !important;
     line-height: 0;
