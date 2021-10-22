@@ -12,7 +12,10 @@
         }
         &__slider-wrap {
             width: 50%;
-            margin-right: 5rem;
+        }
+        &__desc {
+            width: calc(50% - 5rem);
+            margin-left: 5rem;
         }
     }
 }
