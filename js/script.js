@@ -27,9 +27,9 @@ burger('.burger', 'menu-active');
 //text-accordion
 
 const textAccordion = document.querySelector('.text-accordion');
-if(!textAccordion) return false;
-  const btnShow = document.querySelector('.btn-show'),
-  startHeight = textAccordion.style.height;
+
+const btnShow = document.querySelector('.btn-show'),
+startHeight = textAccordion.style.height;
 
 let expanded = false;
 
@@ -64,8 +64,11 @@ textarea.addEventListener('input', (e) => {
 
 //owl-carousel
 
-$(function () {
+window.addEventListener('load', () => {
+  
+})
 
+$(function () {
   const owlPromotions = $(".owl-carousel-promotions");
   const owlReviews = $(".owl-carousel-reviews");
   const owlClinic = $(".owl-carousel-clinic");
@@ -85,12 +88,12 @@ $(function () {
         nav: false,
       },
       769: {
-        items: 2,
+        items: 1,
         nav: false
 
       },
       1200: {
-        items: 3
+        items: 2
       }
     }
   });
@@ -102,7 +105,7 @@ $(function () {
     autoplay: true,
     touchDrag: true,
     autoplayTimeout: 10000,
-    smartSpeed: 2000,
+    smartSpeed: 1000,
     slideTransition: 'linear',
     responsive: {
       320: {
@@ -115,6 +118,7 @@ $(function () {
       },
       992: {
         items: 1,
+        nav: true
       },
     }
   });
@@ -131,11 +135,9 @@ $(function () {
     responsive: {
       320: {
         items: 1,
-        nav: false,
       },
       560: {
         items: 1,
-        nav: false
       },
       1100: {
         items: 1,
@@ -176,7 +178,8 @@ const servicesAccordion = (listSelector, listItemsSelector) => {
 servicesAccordion('.services__subitems', '.services__item.has-subitem > .services__link');
 
 //map popup
-
+console.log(window.innerWidth);
+console.log(1);
 const mapPopup = (mapSelector, mapBtnClass) => {
   const map = document.querySelector(mapSelector);
   if(!map) return false;
@@ -203,10 +206,10 @@ const mapPopup = (mapSelector, mapBtnClass) => {
         let coordX = e.pageX;
         let coordY = e.pageY;
         if (mapPopup) {
-          mapBtn.classList.add('active');
-          mapPopup.style.top = coordY + 'px';
-          mapPopup.style.left = coordX + 'px';
-          mapPopup.classList.add('visible');
+            mapBtn.classList.add('active');
+            mapPopup.style.top = coordY + 'px';
+            mapPopup.style.left = coordX + 'px';
+            mapPopup.classList.add('visible');
         } else {
           return false;
         }

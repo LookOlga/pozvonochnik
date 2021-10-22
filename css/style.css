@@ -720,7 +720,11 @@ section {
 
   .about__slider-wrap {
     width: 50%;
-    margin-right: 5rem;
+  }
+
+  .about__desc {
+    width: calc(50% - 5rem);
+    margin-left: 5rem;
   }
 
   .reviews__wrapper {
@@ -733,11 +737,11 @@ section {
   }
 
   .reviews__form-wrap {
+    width: calc(50% - 5rem);
     margin-left: 5rem;
   }
 
-  .reviews__slider-wrap,
-  .reviews__form-wrap {
+  .reviews__slider-wrap {
     width: 50%;
   }
 
@@ -753,7 +757,7 @@ section {
   .owl-nav .owl-next,
   .owl-nav .owl-prev {
     position: absolute;
-    top: 20%;
+    top: 25%;
     z-index: 999;
     font-size: 5rem !important;
     line-height: 0;
