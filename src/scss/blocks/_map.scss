@@ -2,6 +2,7 @@
     &__popup {
         position: absolute;
         max-width: 250px;
+        min-width: 250px;
         padding: 1rem;
         background-color: #fff;
         border-radius: 10px;
@@ -10,12 +11,17 @@
         visibility: hidden;
         transition: all 0.33s ease 100ms;
     }
-    &__name, &__day {
+
+    &__name,
+    &__day {
         font-weight: 600;
     }
-    &__name, &__address {
+
+    &__name,
+    &__address {
         margin-bottom: 1rem;
     }
+
     &__name {
         font-weight: 1.6rem;
     }
@@ -28,8 +34,9 @@
     &__timetable {
         display: flex;
         justify-content: space-between;
+
         &:last-child {
-            color:tomato;
+            color: tomato;
         }
     }
 }
@@ -45,13 +52,25 @@
         width: 100%;
     }
 }
+
 .map__popup.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+@media(max-width: 650px) {
+    .map__popup.visible-center {
+        min-width: 300px;
         opacity: 1;
         visibility: visible;
+        top: 75% !important;
+        left: 50% !important;
+        transform: translateX(-50%);
+    }
 }
 
 .map__btn.active {
     path {
-        fill:#ff7b0f;
+        fill: #ff7b0f;
     }
 }

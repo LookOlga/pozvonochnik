@@ -378,6 +378,10 @@ body.menu-active .overlay {
   border: 1px solid #e2f3fa;
 }
 
+.promotions__link {
+  cursor: pointer;
+}
+
 .reviews__slider {
   margin: 3rem 0 5rem;
 }
@@ -516,6 +520,7 @@ body.menu-active .overlay {
 .map__popup {
   position: absolute;
   max-width: 250px;
+  min-width: 250px;
   padding: 1rem;
   background-color: #fff;
   border-radius: 10px;
@@ -1137,6 +1142,19 @@ section {
 
   .isDesktop {
     display: none !important;
+  }
+}
+
+@media (max-width: 650px) {
+  .map__popup.visible-center {
+    min-width: 300px;
+    opacity: 1;
+    visibility: visible;
+    top: 75% !important;
+    left: 50% !important;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
   }
 }
 

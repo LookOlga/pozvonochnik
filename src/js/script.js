@@ -4,7 +4,7 @@
 
 const dropdownActive = (btnSelector, activeClass) => {
   const btn = document.querySelector(btnSelector);
-  if(!btn) return false;
+  if (!btn) return false;
   btn.addEventListener('click', () => {
     document.body.classList.toggle(activeClass);
   })
@@ -29,7 +29,7 @@ burger('.burger', 'menu-active');
 const textAccordion = document.querySelector('.text-accordion');
 
 const btnShow = document.querySelector('.btn-show'),
-startHeight = textAccordion.style.height;
+  startHeight = textAccordion.style.height;
 
 let expanded = false;
 
@@ -65,7 +65,7 @@ textarea.addEventListener('input', (e) => {
 //owl-carousel
 
 window.addEventListener('load', () => {
-  
+
 })
 
 $(function () {
@@ -151,7 +151,7 @@ $(function () {
 
 const servicesAccordion = (listSelector, listItemsSelector) => {
   const list = document.querySelectorAll(listSelector);
-  if(!list) return false;
+  if (!list) return false;
   const listItems = document.querySelectorAll(listItemsSelector);
 
   listItems.forEach((item, i) => {
@@ -177,12 +177,51 @@ const servicesAccordion = (listSelector, listItemsSelector) => {
 
 servicesAccordion('.services__subitems', '.services__item.has-subitem > .services__link');
 
-//map popup
-console.log(window.innerWidth);
-console.log(1);
+// map popup
+
+// if(window.innerWidth < 650) {
+//   const mapPopup = (mapSelector, mapBtnClass) => {
+//   const map = document.querySelector(mapSelector);
+//   if(!map) return false;
+//   let visible = false;
+//   map.addEventListener('mouseover', (e) => {
+//     mapPopupOnOff(e, true);
+//   })
+
+//   map.addEventListener('mouseout', (e) => {
+//     mapPopupOnOff(e, false);
+//   })
+
+//   const mapPopupOnOff = (e, visibilityValue) => {
+//     const target = e.target;
+//     const mapBtn = target.parentElement;
+//     if (!mapBtn) return false;
+
+//     visible = visibilityValue;
+
+//     if (mapBtn.classList.contains(mapBtnClass)) {
+//       const popupId = mapBtn.getAttribute('data-popup');
+//       const mapPopup = document.querySelector(`#${popupId}`);
+//       if (visible) {
+//         if (mapPopup) {
+//             map.style.position = 'relative';
+//             mapBtn.classList.add('active');
+//             mapPopup.classList.add('visible-center');
+//         } else {
+//           return false;
+//         }
+//       } else {
+//         mapPopup.classList.remove('visible-center');
+//         mapBtn.classList.remove('active');
+//       }
+//     }
+//   }
+// }
+// mapPopup('.map', 'map__btn');
+// }
 const mapPopup = (mapSelector, mapBtnClass) => {
   const map = document.querySelector(mapSelector);
-  if(!map) return false;
+  if (!map) return false;
   let visible = false;
   map.addEventListener('mouseover', (e) => {
     mapPopupOnOff(e, true);
@@ -197,28 +236,86 @@ const mapPopup = (mapSelector, mapBtnClass) => {
     const mapBtn = target.parentElement;
     if (!mapBtn) return false;
 
+    let coordX = e.pageX;
+    let coordY = e.pageY;
+
     visible = visibilityValue;
 
     if (mapBtn.classList.contains(mapBtnClass)) {
       const popupId = mapBtn.getAttribute('data-popup');
       const mapPopup = document.querySelector(`#${popupId}`);
-      if (visible) {
-        let coordX = e.pageX;
-        let coordY = e.pageY;
-        if (mapPopup) {
-            mapBtn.classList.add('active');
-            mapPopup.style.top = coordY + 'px';
-            mapPopup.style.left = coordX + 'px';
-            mapPopup.classList.add('visible');
-        } else {
-          return false;
-        }
+      if (window.innerWidth < 650) {
+        setPopupPosition(visible, 'visible-center', 'relative');
       } else {
-        mapPopup.classList.remove('visible');
-        mapBtn.classList.remove('active');
+        mapPopup.style.top = coordY + 'px';
+        mapPopup.style.left = coordX + 'px';
+        setPopupPosition(visible, 'visible', 'static');
+      }
+
+      function setPopupPosition(visibilityValue, visibilityClass, mapPosition) {
+        if (visibilityValue) {
+          if (!mapPopup) return false;
+          map.style.position = mapPosition;
+          mapBtn.classList.add('active');
+          mapPopup.classList.add(visibilityClass);
+        } else {
+          mapPopup.classList.remove(visibilityClass);
+          mapBtn.classList.remove('active');
+        }
       }
     }
+
   }
 }
 
 mapPopup('.map', 'map__btn');
+
+
+
+
+// const mapPopupOnOff = (e, visibilityValue) => {
+//   const target = e.target;
+//   const mapBtn = target.parentElement;
+//   if (!mapBtn) return false;
+
+//   let coordX = e.pageX;
+//   let coordY = e.pageY;
+
+//   visible = visibilityValue;
+
+//   if (mapBtn.classList.contains(mapBtnClass)) {
+//     const popupId = mapBtn.getAttribute('data-popup');
+//     const mapPopup = document.querySelector(`#${popupId}`);
+//     if (window.innerWidth < 650) {
+//       if (visible) {
+//         if (mapPopup) {
+//           map.style.position = 'relative';
+//           mapBtn.classList.add('active');
+//           mapPopup.classList.add('visible-center');
+//         } else {
+//           return false;
+//         }
+//       } else {
+//         mapPopup.classList.remove('visible-center');
+//         mapBtn.classList.remove('active');
+//       }
+//     } else {
+//       if (visible) {
+
+//         if (mapPopup) {
+//           mapBtn.classList.add('active');
+//           mapPopup.style.top = coordY + 'px';
+//           mapPopup.style.left = coordX + 'px';
+//           mapPopup.classList.add('visible');
+//         } else {
+//           return false;
+//         }
+//       } else {
+//         mapPopup.classList.remove('visible');
+//         mapBtn.classList.remove('active');
+//       }
+//     }
+
+//   }
+
+// }

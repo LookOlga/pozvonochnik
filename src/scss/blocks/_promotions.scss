@@ -6,4 +6,7 @@
         padding: 1rem;
         border: 1px solid $primary-bg;
     }
+    &__link {
+        cursor: pointer;
+    }
 }
