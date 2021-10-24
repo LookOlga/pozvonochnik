@@ -158,6 +158,7 @@ const servicesAccordion = (listSelector, listItemsSelector) => {
     item.addEventListener('click', e => {
       e.preventDefault();
       e.stopPropagation();
+  
       const target = e.target;
       const listItem = list[i];
       const listHeight = window.getComputedStyle(listItem).height;
@@ -170,55 +171,14 @@ const servicesAccordion = (listSelector, listItemsSelector) => {
         listItemScrollHeight();
         listItem.style.height = '0';
       }
-      target.children[0].classList.toggle('rotateArrow');
+      
+      item.querySelector('.services__arrow').classList.toggle('rotateArrow');
     }, true);
   });
 };
 
 servicesAccordion('.services__subitems', '.services__item.has-subitem > .services__link');
 
-// map popup
-
-// if(window.innerWidth < 650) {
-//   const mapPopup = (mapSelector, mapBtnClass) => {
-//   const map = document.querySelector(mapSelector);
-//   if(!map) return false;
-//   let visible = false;
-//   map.addEventListener('mouseover', (e) => {
-//     mapPopupOnOff(e, true);
-//   })
-
-//   map.addEventListener('mouseout', (e) => {
-//     mapPopupOnOff(e, false);
-//   })
-
-//   const mapPopupOnOff = (e, visibilityValue) => {
-//     const target = e.target;
-//     const mapBtn = target.parentElement;
-//     if (!mapBtn) return false;
-
-//     visible = visibilityValue;
-
-//     if (mapBtn.classList.contains(mapBtnClass)) {
-//       const popupId = mapBtn.getAttribute('data-popup');
-//       const mapPopup = document.querySelector(`#${popupId}`);
-//       if (visible) {
-//         if (mapPopup) {
-//             map.style.position = 'relative';
-//             mapBtn.classList.add('active');
-//             mapPopup.classList.add('visible-center');
-//         } else {
-//           return false;
-//         }
-//       } else {
-//         mapPopup.classList.remove('visible-center');
-//         mapBtn.classList.remove('active');
-//       }
-//     }
-//   }
-// }
-// mapPopup('.map', 'map__btn');
-// }
 const mapPopup = (mapSelector, mapBtnClass) => {
   const map = document.querySelector(mapSelector);
   if (!map) return false;
@@ -273,49 +233,10 @@ mapPopup('.map', 'map__btn');
 
 
 
-// const mapPopupOnOff = (e, visibilityValue) => {
-//   const target = e.target;
-//   const mapBtn = target.parentElement;
-//   if (!mapBtn) return false;
 
-//   let coordX = e.pageX;
-//   let coordY = e.pageY;
 
-//   visible = visibilityValue;
 
-//   if (mapBtn.classList.contains(mapBtnClass)) {
-//     const popupId = mapBtn.getAttribute('data-popup');
-//     const mapPopup = document.querySelector(`#${popupId}`);
-//     if (window.innerWidth < 650) {
-//       if (visible) {
-//         if (mapPopup) {
-//           map.style.position = 'relative';
-//           mapBtn.classList.add('active');
-//           mapPopup.classList.add('visible-center');
-//         } else {
-//           return false;
-//         }
-//       } else {
-//         mapPopup.classList.remove('visible-center');
-//         mapBtn.classList.remove('active');
-//       }
-//     } else {
-//       if (visible) {
 
-//         if (mapPopup) {
-//           mapBtn.classList.add('active');
-//           mapPopup.style.top = coordY + 'px';
-//           mapPopup.style.left = coordX + 'px';
-//           mapPopup.classList.add('visible');
-//         } else {
-//           return false;
-//         }
-//       } else {
-//         mapPopup.classList.remove('visible');
-//         mapBtn.classList.remove('active');
-//       }
-//     }
 
-//   }
 
-// }
+

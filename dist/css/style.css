@@ -527,9 +527,9 @@ body.menu-active .overlay {
   border: 1px solid #e2f3fa;
   opacity: 0;
   visibility: hidden;
-  -webkit-transition: all 0.33s ease 100ms;
-  -o-transition: all 0.33s ease 100ms;
-  transition: all 0.33s ease 100ms;
+  -webkit-transition: opacity 0.33s ease 100ms;
+  -o-transition: opacity 0.33s ease 100ms;
+  transition: opacity 0.33s ease 100ms;
 }
 
 .map__name,
@@ -859,6 +859,17 @@ section {
 
   .map {
     width: 100%;
+  }
+
+  .map__wrapper {
+    overflow: hidden;
+    margin: 0 -2.5rem;
+  }
+
+  .map__wrapper svg {
+    -webkit-transform: scale(1.5);
+        -ms-transform: scale(1.5);
+            transform: scale(1.5);
   }
 }
 
