@@ -9,13 +9,15 @@
     }
 }
 
+
+
 @media (min-width: 769px) {
     .clinics {
         width: 95%;
         &__item {
             display: flex;
             margin-bottom: 1rem;
-            margin-right: 5%;
+            margin-right: 2%;
             svg {
                 width: 2rem;
                 height: 2rem;
@@ -35,6 +37,14 @@
             svg {
                 color: $primary-text;
             }
+        }
+    }
+}
+
+@media (min-width: 1500px) {
+    .clinics {
+        &__item {
+            margin-right: 5%;
         }
     }
 }

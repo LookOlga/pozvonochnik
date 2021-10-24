@@ -39,6 +39,7 @@
     }
 
     body.menu-active {
+        overflow: hidden;
         .menu {
             transform: translateX(-100%);
         }

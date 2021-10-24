@@ -673,7 +673,7 @@ section {
     display: -ms-flexbox;
     display: flex;
     margin-bottom: 1rem;
-    margin-right: 5%;
+    margin-right: 2%;
   }
 
   .clinics__item svg {
@@ -851,6 +851,12 @@ section {
   }
 }
 
+@media (min-width: 1500px) {
+  .clinics__item {
+    margin-right: 5%;
+  }
+}
+
 @media (max-width: 1100px) {
   .head-map__text {
     width: 100%;
@@ -1001,6 +1007,10 @@ section {
     border-bottom: 1px solid #ccc;
   }
 
+  body.menu-active {
+    overflow: hidden;
+  }
+
   body.menu-active .menu {
     -webkit-transform: translateX(-100%);
         -ms-transform: translateX(-100%);
@@ -1017,6 +1027,7 @@ section {
             align-items: center;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+    margin-right: 3rem;
   }
 
   .clinic__name {
@@ -1047,7 +1058,7 @@ section {
 
   .dropdown--clinics,
   .dropdown--phones {
-    top: 5rem;
+    top: 6.5rem;
     background-color: #fff;
     border: 1px solid #e2f3fa;
     margin-top: 5px;
