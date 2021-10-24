@@ -2,8 +2,8 @@
     display: flex;
     &::before {
         content: '';
-        width: 24px;
-        height: 24px;
+        width: 2.4rem;
+        height: 2.4rem;
         background: url('../img/icons/location_blue.svg') center center no-repeat;
         margin-right: 1rem;
     }
