@@ -1,9 +1,9 @@
 .map {
     &__popup {
         position: absolute;
-        max-width: 250px;
+        width: 30px;
         min-width: 250px;
-        padding: 1rem;
+        padding: 3rem;
         background-color: #fff;
         border-radius: 10px;
         border: 1px solid $primary-bg;
@@ -15,6 +15,7 @@
     &__name,
     &__day {
         font-weight: 600;
+        line-height: 1;
     }
 
     &__name,
@@ -23,6 +24,7 @@
     }
 
     &__name {
+        font-size: 1.8rem;
         font-weight: 1.6rem;
     }
 
@@ -41,9 +43,20 @@
     }
 }
 
-@media(min-width: 1100px) {
+@media (min-width: 1100px) {
     .map {
         width: 55%;
+        &__popup {
+            width: 23.5vw;
+        }
+    }
+}
+
+@media(min-width: 1400px) {
+    .map {
+        &__popup {
+            width: 360px;
+        }
     }
 }
 
@@ -60,6 +73,14 @@
     }
 }
 
+@media(min-width: 769px) {
+    .map {
+        &__popup {
+            width: 360px;
+        }
+    }
+}
+
 .map__popup.visible {
     opacity: 1;
     visibility: visible;
@@ -67,7 +88,7 @@
 
 @media(max-width: 650px) {
     .map__popup.visible-center {
-        min-width: 300px;
+        width: 100%;
         opacity: 1;
         visibility: visible;
         top: 75% !important;
