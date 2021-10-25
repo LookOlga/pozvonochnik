@@ -230,6 +230,36 @@ const mapPopup = (mapSelector, mapBtnClass) => {
 
 mapPopup('.map', 'map__btn');
 
+// pageup
+
+const pageUp = (btnSelector) => {
+  const pageUpBtn = document.querySelector(btnSelector);
+
+window.addEventListener('scroll', trackScroll);
+pageUpBtn.addEventListener('click', (e) => {
+  e.stopPropagation();
+  backToTop();
+});
+
+function trackScroll() {
+    let scrolled = window.pageYOffset;
+
+    scrolled > 500 ?  pageUpBtn.classList.add('show') : pageUpBtn.classList.remove('show');
+  }
+
+  function backToTop() {
+    if (window.pageYOffset > 0) {
+      document.body.scrollIntoView({    
+        behavior: 'smooth',   
+        block: 'start'   
+    }); 
+    }
+}
+}
+
+pageUp('.page-up');
+
+
 
 
 

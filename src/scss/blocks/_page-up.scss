@@ -1,0 +1,18 @@
+.page-up {
+    position: fixed;
+    right: 4rem;
+    bottom: 4rem;
+    opacity: 0;
+    transition: 0.33s ease;
+    cursor: pointer;
+    z-index: 100000;
+    svg {
+        width: 4.5rem;
+        height: 4.5rem;
+        color: $secondary-text;
+    }    
+}
+
+.show {
+    opacity: 1;
+}
