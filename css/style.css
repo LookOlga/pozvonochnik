@@ -299,8 +299,8 @@ body.menu-active .overlay {
 
 .phone-link::before {
   content: "";
-  width: 24px;
-  height: 24px;
+  width: 2.4rem;
+  height: 2.4rem;
   background: url("../img/icons/phone.svg") center center no-repeat;
   margin-right: 1rem;
 }
@@ -320,8 +320,8 @@ body.menu-active .overlay {
 
 .email-link::before {
   content: "";
-  width: 24px;
-  height: 24px;
+  width: 2.4rem;
+  height: 2.4rem;
   background: url("../img/icons/mail.svg") center center no-repeat;
   margin-right: 1rem;
 }
@@ -334,8 +334,8 @@ body.menu-active .overlay {
 
 .address-link::before {
   content: "";
-  width: 24px;
-  height: 24px;
+  width: 2.4rem;
+  height: 2.4rem;
   background: url("../img/icons/location_blue.svg") center center no-repeat;
   margin-right: 1rem;
 }
@@ -351,10 +351,6 @@ body.menu-active .overlay {
 .call__img {
   width: 100%;
   height: 100%;
-}
-
-.call__img img {
-  width: 645px;
 }
 
 .input,
@@ -519,22 +515,23 @@ body.menu-active .overlay {
 
 .map__popup {
   position: absolute;
-  max-width: 250px;
+  width: 30px;
   min-width: 250px;
-  padding: 1rem;
+  padding: 3rem;
   background-color: #fff;
   border-radius: 10px;
   border: 1px solid #e2f3fa;
   opacity: 0;
   visibility: hidden;
-  -webkit-transition: all 0.33s ease 100ms;
-  -o-transition: all 0.33s ease 100ms;
-  transition: all 0.33s ease 100ms;
+  -webkit-transition: opacity 0.33s ease 100ms;
+  -o-transition: opacity 0.33s ease 100ms;
+  transition: opacity 0.33s ease 100ms;
 }
 
 .map__name,
 .map__day {
   font-weight: 600;
+  line-height: 1;
 }
 
 .map__name,
@@ -543,6 +540,7 @@ body.menu-active .overlay {
 }
 
 .map__name {
+  font-size: 1.8rem;
   font-weight: 1.6rem;
 }
 
@@ -610,7 +608,7 @@ svg path {
 }
 
 .container {
-  max-width: 1400px;
+  max-width: 140rem;
   width: 100%;
   padding: 0 2.5rem;
   margin: 0 auto;
@@ -673,7 +671,7 @@ section {
     display: -ms-flexbox;
     display: flex;
     margin-bottom: 1rem;
-    margin-right: 5%;
+    margin-right: 3%;
   }
 
   .clinics__item svg {
@@ -827,7 +825,11 @@ section {
   }
 
   .footer__right small {
-    font-size: 12px;
+    font-size: 1.2rem;
+  }
+
+  .map__popup {
+    width: 360px;
   }
 
   .isMobile {
@@ -849,6 +851,28 @@ section {
   .map {
     width: 55%;
   }
+
+  .map__popup {
+    width: 23.5vw;
+  }
+}
+
+@media (min-width: 1400px) {
+  .map__popup {
+    width: 360px;
+  }
+}
+
+@media (min-width: 1500px) {
+  .clinics__item {
+    margin-right: 5%;
+  }
+}
+
+@media (min-width: 1921px) {
+  html {
+    font-size: 0.7vw;
+  }
 }
 
 @media (max-width: 1100px) {
@@ -859,6 +883,17 @@ section {
 
   .map {
     width: 100%;
+  }
+
+  .map__wrapper {
+    overflow: hidden;
+    margin: 0 -2.5rem;
+  }
+
+  .map__wrapper svg {
+    -webkit-transform: scale(1.5);
+        -ms-transform: scale(1.5);
+            transform: scale(1.5);
   }
 }
 
@@ -990,6 +1025,10 @@ section {
     border-bottom: 1px solid #ccc;
   }
 
+  body.menu-active {
+    overflow: hidden;
+  }
+
   body.menu-active .menu {
     -webkit-transform: translateX(-100%);
         -ms-transform: translateX(-100%);
@@ -1006,6 +1045,7 @@ section {
             align-items: center;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+    margin-right: 3rem;
   }
 
   .clinic__name {
@@ -1036,7 +1076,7 @@ section {
 
   .dropdown--clinics,
   .dropdown--phones {
-    top: 5rem;
+    top: 6.5rem;
     background-color: #fff;
     border: 1px solid #e2f3fa;
     margin-top: 5px;
@@ -1147,7 +1187,7 @@ section {
 
 @media (max-width: 650px) {
   .map__popup.visible-center {
-    min-width: 300px;
+    width: 100%;
     opacity: 1;
     visibility: visible;
     top: 75% !important;
