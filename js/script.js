@@ -16,6 +16,7 @@ dropdownActive('.top-head__btn', 'dropdown-phones-active');
 //burger-menu
 const burger = (burgerSelector, classActive) => {
   const burger = document.querySelector(burgerSelector);
+  if (!burger) return false;
   burger.addEventListener('click', () => {
     document.body.classList.toggle(classActive);
   })
@@ -26,41 +27,57 @@ burger('.burger', 'menu-active');
 
 //text-accordion
 
-const textAccordion = document.querySelector('.text-accordion');
+const textAccordion = (textAccordionSelector, btnShowSelector) => {
+  const textAccordionBlock = document.querySelector(textAccordionSelector);
+  if (!textAccordionBlock) return false;
 
-const btnShow = document.querySelector('.btn-show'),
-  startHeight = textAccordion.style.height;
+  const btnShow = document.querySelector(btnShowSelector),
+    startHeight = textAccordionBlock.style.height;
+  if (!btnShow) return false;
 
-let expanded = false;
+  let expanded = false;
 
-btnShow.addEventListener('click', () => {
-  if (!expanded) {
-    textAccordion.style.height = `${textAccordion.scrollHeight}px`;
-    btnShow.innerHTML = 'Свернуть';
-  } else {
-    textAccordion.style.height = `${textAccordion.scrollHeight}px`;
-    textAccordion.style.height = startHeight;
-    btnShow.innerHTML = 'Подробнее';
-  }
-  expanded = !expanded;
-})
 
-btnShow.addEventListener("transitionend", () => {
-  if (textAccordion.style.height !== startHeight) {
-    textAccordion.style.height = "auto"
-  }
-});
+  btnShow.addEventListener('click', () => {
+    if (!expanded) {
+      textAccordionBlock.style.height = `${textAccordionBlock.scrollHeight}px`;
+      btnShow.innerHTML = 'Свернуть';
+    } else {
+      textAccordionBlock.style.height = `${textAccordionBlock.scrollHeight}px`;
+      textAccordionBlock.style.height = startHeight;
+      btnShow.innerHTML = 'Подробнее';
+    }
+    expanded = !expanded;
+  })
+
+  btnShow.addEventListener("transitionend", () => {
+    if (textAccordionBlock.style.height !== startHeight) {
+      textAccordionBlock.style.height = "auto"
+    }
+  });
+}
+
+textAccordion('.text-accordion', '.btn-show')
 
 //textarea autoresize
 
-const textarea = document.querySelector('textarea');
+const textareaAutoresize = (textareaSelector) => {
+  const textareas = document.querySelectorAll(textareaSelector);
+  if (!textareas) return false;
 
-textarea.addEventListener('input', (e) => {
-  const target = e.target;
+  textareas.forEach(item => {
+    item.addEventListener('input', (e) => {
+      const target = e.target;
 
-  target.style.height = 'auto';
-  target.style.height = target.scrollHeight + 'px';
-})
+      target.style.height = 'auto';
+      target.style.height = target.scrollHeight + 'px';
+    })
+  })
+}
+
+textareaAutoresize('textarea');
+
+
 
 //owl-carousel
 
@@ -153,13 +170,13 @@ const servicesAccordion = (listSelector, listItemsSelector) => {
   const list = document.querySelectorAll(listSelector);
   if (!list) return false;
   const listItems = document.querySelectorAll(listItemsSelector);
+  if (!listItems) return false;
 
   listItems.forEach((item, i) => {
     item.addEventListener('click', e => {
       e.preventDefault();
       e.stopPropagation();
-  
-      const target = e.target;
+
       const listItem = list[i];
       const listHeight = window.getComputedStyle(listItem).height;
       const listItemScrollHeight = () => {
@@ -171,7 +188,7 @@ const servicesAccordion = (listSelector, listItemsSelector) => {
         listItemScrollHeight();
         listItem.style.height = '0';
       }
-      
+
       item.querySelector('.services__arrow').classList.toggle('rotateArrow');
     }, true);
   });
@@ -234,39 +251,28 @@ mapPopup('.map', 'map__btn');
 
 const pageUp = (btnSelector) => {
   const pageUpBtn = document.querySelector(btnSelector);
+  if (!pageUpBtn) return false;
 
-window.addEventListener('scroll', trackScroll);
-pageUpBtn.addEventListener('click', (e) => {
-  e.stopPropagation();
-  backToTop();
-});
+  window.addEventListener('scroll', trackScroll);
+  pageUpBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    backToTop();
+  });
 
-function trackScroll() {
+  function trackScroll() {
     let scrolled = window.pageYOffset;
 
-    scrolled > 500 ?  pageUpBtn.classList.add('show') : pageUpBtn.classList.remove('show');
+    scrolled > 500 ? pageUpBtn.classList.add('show') : pageUpBtn.classList.remove('show');
   }
 
   function backToTop() {
     if (window.pageYOffset > 0) {
-      document.body.scrollIntoView({    
-        behavior: 'smooth',   
-        block: 'start'   
-    }); 
+      document.body.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
     }
-}
+  }
 }
 
 pageUp('.page-up');
-
-
-
-
-
-
-
-
-
-
-
-
