@@ -573,6 +573,28 @@ body.menu-active .overlay {
   fill: #ff7b0f;
 }
 
+.page-up {
+  position: fixed;
+  right: 4rem;
+  bottom: 4rem;
+  opacity: 0;
+  -webkit-transition: 0.33s ease;
+  -o-transition: 0.33s ease;
+  transition: 0.33s ease;
+  cursor: pointer;
+  z-index: 100000;
+}
+
+.page-up svg {
+  width: 4.5rem;
+  height: 4.5rem;
+  color: #367b87;
+}
+
+.show {
+  opacity: 1;
+}
+
 html {
   font-size: 10px;
 }
