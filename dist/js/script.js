@@ -288,8 +288,10 @@ const padTopMain = (headerSelector, mainSelector) => {
   const header = document.querySelector(headerSelector),
   main = document.querySelector(mainSelector),
   headerHeight = header.offsetHeight;
+  if(!header) return false;
+  if(!main) return false;
 
-  main.style.paddingTop = headerHeight;
+  main.style.paddingTop = headerHeight + 'px';
 }
 
 padTopMain('header', 'main');
@@ -306,6 +308,8 @@ window.addEventListener('scroll', () => {
 const stickyHeader = (headerSelector) => {
   const header = document.querySelector(headerSelector),
   topHead = header.querySelector('.top-head');
+  if(!header) return false;
+  if(!topHead) return false;
 
   let start = window.pageYOffset;
 

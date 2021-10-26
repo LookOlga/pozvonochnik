@@ -9,33 +9,50 @@
 @import 'base/buttons';
 @import 'base/text';
 
+
+//header 
 @import 'blocks/header';
-@import 'blocks/logo';
 @import 'blocks/top-head';
 @import 'blocks/bottom-head';
 @import 'blocks/burger';
+@import 'blocks/logo';
 @import 'blocks/menu';
 @import 'blocks/clinic';
 @import 'blocks/clinics';
 @import 'blocks/dropdown';
-@import 'blocks/overlay';
+
+//head-map
 @import 'blocks/head-map';
+@import 'blocks/map';
+@import 'blocks/stat';
+
+//main page sections
+@import 'blocks/call';
+@import 'blocks/about';
+@import 'blocks/services';
+@import 'blocks/promotions';
+@import 'blocks/reviews';
+
+//owl-carousel
+@import 'blocks/owl-carousel';
+
+//footer
+@import 'blocks/footer';
+
+//links
 @import 'blocks/phone-link';
 @import 'blocks/email-link';
 @import 'blocks/address-link';
-@import 'blocks/call';
+@import 'blocks/social';
+
+//other
 @import 'blocks/form';
 @import 'blocks/text-accordion';
-@import 'blocks/about';
-@import 'blocks/promotions';
-@import 'blocks/reviews';
-@import 'blocks/owl-carousel';
-@import 'blocks/stat';
-@import 'blocks/services';
-@import 'blocks/footer';
-@import 'blocks/social';
-@import 'blocks/map';
+@import 'blocks/overlay';
 @import 'blocks/page-up';
+
+//inner pages
+@import 'pages/price';
 
 
 
