@@ -186,7 +186,14 @@ ul {
 }
 
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   padding: 2rem 0;
+  background-color: #fff;
+  border: 1px solid #e2f3fa;
+  z-index: 1000;
 }
 
 .logo__link {
@@ -221,6 +228,11 @@ ul {
   padding-bottom: 1rem;
   border-bottom: 1px solid #e2f3fa;
   margin-bottom: 2rem;
+}
+
+.top-head.hide {
+  height: 0;
+  opacity: 0;
 }
 
 .bottom-head {
@@ -648,6 +660,10 @@ svg path {
   width: 100%;
   padding: 0 2.5rem;
   margin: 0 auto;
+}
+
+.main {
+  padding-top: 170px;
 }
 
 section {

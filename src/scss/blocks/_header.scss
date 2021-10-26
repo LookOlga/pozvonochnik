@@ -1,5 +1,12 @@
 .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     padding: 2rem 0;
+    background-color: #fff;
+    border: 1px solid $primary-bg;
+    z-index: 1000;
 }
 
 @media(max-width: 769px) {

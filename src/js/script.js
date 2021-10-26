@@ -276,3 +276,26 @@ const pageUp = (btnSelector) => {
 }
 
 pageUp('.page-up');
+
+//sticky header
+let curPosition = 0;
+window.addEventListener('scroll', () => {
+  stickyHeader('header');
+})
+
+const stickyHeader = (headerSelector) => {
+  const header = document.querySelector(headerSelector);
+  const topHead = header.querySelector('.top-head');
+
+  let start = window.pageYOffset;
+
+  if(start > curPosition) {
+    topHead.classList.add('hide');
+    
+  }  else {
+    topHead.classList.remove('hide');
+  }
+
+  curPosition = start;
+
+}

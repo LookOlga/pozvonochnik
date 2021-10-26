@@ -5,7 +5,13 @@
     padding-bottom: 1rem;
     border-bottom: 1px solid $primary-bg;
     margin-bottom: 2rem;
- }
+    // transition: 0.33s ease-in-out;
+}
+
+.top-head.hide {
+    height: 0;
+    opacity: 0;
+}
 
 @media(min-width: 769px) {
     .top-head {
