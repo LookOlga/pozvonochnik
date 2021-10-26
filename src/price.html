@@ -1,6 +1,29 @@
-@@include('partials/_header.html')
+@@include('partials/_header.html',{
+	"title":"Прайс"
+	})
 <main class="main">
-    @@include('partials/_head-map.html')
+    <section class="head-map">
+        <div class="container head-map__container">
+            <div class="head-map__text">
+                <h1 class="head-map__title title title--h1">Прайс на услуги</h1>
+                <ul class="head-map__stat stat">
+                    <li class="stat__item">
+                        <div class="stat__num">0</div>
+                        <div class="stat__label">Сколько выполено</div>
+                    </li>
+                    <li class="stat__item">
+                        <div class="stat__num">0</div>
+                        <div class="stat__label">Сколько выполено операций</div>
+                    </li>
+                    <li class="stat__item">
+                        <div class="stat__num">0</div>
+                        <div class="stat__label">Сколько выполено</div>
+                    </li>
+                </ul>
+            </div>
+            @@include('partials/_map.html')
+        </div>
+    </section>
 
     <section class="price">
         <div class="container">
@@ -17,7 +40,7 @@
                     </li>
                     <li class="price__item">
                         <span>Консультация повторная: врача к.м.н.</span>
-                        <span>	2000 руб.</span>
+                        <span> 2000 руб.</span>
                     </li>
                     <li class="price__item">
                         <span>Консультация первичная: врача ортопеда-хирурга</span>
@@ -58,7 +81,7 @@
                     </li>
                     <li class="price__item">
                         <span>Анализ крови, неврологический профиль №3</span>
-                        <span>	0 руб.</span>
+                        <span> 0 руб.</span>
                     </li>
                 </ul>
             </div>
@@ -84,7 +107,7 @@
                     <li class="price__item">
                         <span>Анализ крови, кардиологический профиль №2</span>
                         <span>2350 руб.</span>
-                        </li>
+                    </li>
                     <li class="price__item">
                         <span>Анализ крови, кардиологический профиль №3</span>
                         <span>0 руб.</span>
@@ -130,7 +153,7 @@
                 <ul class="price__list">
                     <li class="price__item">
                         <span>Пособие по подбору и изготовление ортопедических стелек Сурсил от 36 размера</span>
-                        <span>	3000 руб.</span>
+                        <span> 3000 руб.</span>
                     </li>
                     <li class="price__item">
                         <span>Пособие по подбору и изготовление ортопедических стелек Формтотикс 36-50</span>
@@ -138,7 +161,7 @@
                     </li>
                     <li class="price__item">
                         <span>Пособие по подбору и изготовление ортопедических стелек Формтотикс 29-35</span>
-                        <span>	4000 руб.</span>
+                        <span> 4000 руб.</span>
                     </li>
                     <li class="price__item">
                         <span>Пособие по подбору и изготовление ортопедических стелек Формтотикс до 29</span>
@@ -150,7 +173,7 @@
                     </li>
                     <li class="price__item">
                         <span>Пособие по подбору и изготовление ортопедических стелек Сурсил до 36 размера</span>
-                        <span>	2500 руб.</span>
+                        <span> 2500 руб.</span>
                     </li>
                     <li class="price__item">
                         <span>Анализ крови, ортопедический профиль №1</span>
@@ -251,11 +274,11 @@
                     </li>
                     <li class="price__item">
                         <span>Наложение повязки тейпирование</span>
-                        <span>	600 руб.</span>
+                        <span> 600 руб.</span>
                     </li>
                     <li class="price__item">
                         <span>Иссечение поражения кожи-вскрытие фликтен</span>
-                        <span>	500 руб.</span>
+                        <span> 500 руб.</span>
                     </li>
                     <li class="price__item">
                         <span>Местная анестезия</span>
@@ -269,15 +292,15 @@
             </div>
         </div>
     </section>
+
+    @@include('partials/_about.html')
+
+    @@include('partials/_promotions.html')
+
+    @@include('partials/_services.html')
+
+    @@include('partials/_reviews.html')
+
 </main>
-
-@@include('partials/_about.html')
-
-@@include('partials/_promotions.html')
-
-@@include('partials/_services.html')
-
-@@include('partials/_reviews.html')
-
 
 @@include('partials/_footer.html')
