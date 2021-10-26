@@ -716,7 +716,7 @@ svg path {
 }
 
 section {
-  margin-bottom: 7rem;
+  margin-bottom: 9rem;
 }
 
 @media (min-width: 769px) {
@@ -922,6 +922,10 @@ section {
     left: -5rem;
   }
 
+  .promotions__slider .owl-dots {
+    display: none;
+  }
+
   .footer {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
@@ -944,10 +948,6 @@ section {
 
   .footer__right small {
     font-size: 1.2rem;
-  }
-
-  .employees {
-    padding: 8rem 0;
   }
 
   .employees__item {
