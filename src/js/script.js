@@ -99,6 +99,7 @@ $(function () {
     autoplayTimeout: 10000,
     smartSpeed: 1000,
     slideTransition: 'linear',
+    autoplayHoverPause: true,
     responsive: {
       320: {
         items: 1,
@@ -124,6 +125,7 @@ $(function () {
     autoplayTimeout: 10000,
     smartSpeed: 1000,
     slideTransition: 'linear',
+    autoplayHoverPause: true,
     responsive: {
       320: {
         items: 1,
@@ -149,6 +151,7 @@ $(function () {
     autoplayTimeout: 25000,
     smartSpeed: 1,
     slideTransition: 'linear',
+    autoplayHoverPause: true,
     responsive: {
       320: {
         items: 1,
@@ -194,7 +197,9 @@ const servicesAccordion = (listSelector, listItemsSelector) => {
   });
 };
 
-servicesAccordion('.services__subitems', '.services__item.has-subitem > .services__link');
+if(window.innerWidth < 769) {
+  servicesAccordion('.services__subitems', '.services__item.has-subitem > .services__link');
+}
 
 const mapPopup = (mapSelector, mapBtnClass) => {
   const map = document.querySelector(mapSelector);
@@ -277,22 +282,37 @@ const pageUp = (btnSelector) => {
 
 pageUp('.page-up');
 
+//padding-top main
+
+const padTopMain = (headerSelector, mainSelector) => {
+  const header = document.querySelector(headerSelector),
+  main = document.querySelector(mainSelector),
+  headerHeight = header.offsetHeight;
+
+  main.style.paddingTop = headerHeight;
+}
+
+padTopMain('header', 'main');
+
 //sticky header
+
 let curPosition = 0;
+
 window.addEventListener('scroll', () => {
+
   stickyHeader('header');
 })
 
 const stickyHeader = (headerSelector) => {
-  const header = document.querySelector(headerSelector);
-  const topHead = header.querySelector('.top-head');
+  const header = document.querySelector(headerSelector),
+  topHead = header.querySelector('.top-head');
 
   let start = window.pageYOffset;
 
-  if(start > curPosition) {
+  if (start > curPosition) {
     topHead.classList.add('hide');
-    
-  }  else {
+
+  } else {
     topHead.classList.remove('hide');
   }
 

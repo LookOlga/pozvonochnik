@@ -231,8 +231,7 @@ ul {
 }
 
 .top-head.hide {
-  height: 0;
-  opacity: 0;
+  display: none;
 }
 
 .bottom-head {
@@ -660,10 +659,6 @@ svg path {
   width: 100%;
   padding: 0 2.5rem;
   margin: 0 auto;
-}
-
-.main {
-  padding-top: 170px;
 }
 
 section {
