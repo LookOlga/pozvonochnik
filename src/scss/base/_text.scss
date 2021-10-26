@@ -25,7 +25,7 @@
 }
 
 @media(max-width: 480px) {
-    .title, .subtitle, .text {
+    .title:not(.title--h1), .subtitle, .text {
         margin-bottom: 1rem;
     }
     .title {
