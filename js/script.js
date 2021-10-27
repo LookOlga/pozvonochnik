@@ -361,8 +361,11 @@ const stickyHeader = (headerSelector) => {
 const previewImage = (imagesSelector, previewWindowSelector, previewContainerSelector, previewImgSelector,
   btnCloseSelector, btnNextSelector, btnPrevSelector) => {
   const images = document.querySelectorAll(imagesSelector),
-    previewWindow = document.querySelector(previewWindowSelector),
-    previewContainer = previewWindow.querySelector(previewContainerSelector),
+    previewWindow = document.querySelector(previewWindowSelector);
+    if(!images) return false;
+    if(!previewWindow) return false;
+
+   const previewContainer = previewWindow.querySelector(previewContainerSelector),
     previewImg = previewWindow.querySelector(previewImgSelector),
     btnClose = previewWindow.querySelector(btnCloseSelector),
     btnNext = previewWindow.querySelector(btnNextSelector),
