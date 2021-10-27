@@ -7,20 +7,23 @@
         position: sticky;
         top: 15px;
     }
+
+    .owl-carousel .owl-nav button.owl-next, .owl-carousel .owl-nav button.owl-prev, .owl-carousel button.owl-dot {
+        line-height: 0;
+    }
     
     .owl-nav .owl-next, .owl-nav .owl-prev {
         position: absolute;
-        top: 25%;
+        top: 45%;
         z-index: 999;
         font-size: 5rem !important;
-        line-height: 0;
       }
 
-      .promotions__slider .owl-nav .owl-next {
+      .promotions__slider .owl-nav .owl-next, .license__slider .owl-nav .owl-next {
         right: -20px;
       }
 
-      .promotions__slider .owl-nav .owl-prev {
+      .promotions__slider .owl-nav .owl-prev, .license__slider .owl-nav .owl-prev  {
        left: -20px;
     }
 
