@@ -89,6 +89,7 @@ $(function () {
   const owlPromotions = $(".owl-carousel-promotions");
   const owlReviews = $(".owl-carousel-reviews");
   const owlClinic = $(".owl-carousel-clinic");
+  const owlLicense = $(".owl-carousel-license");
 
   owlPromotions.owlCarousel({
     margin: 10,
@@ -164,6 +165,35 @@ $(function () {
       },
     }
   });
+
+
+  owlLicense.owlCarousel({
+    margin: 10,
+    rewind: true,
+    autoplay: true,
+    touchDrag: true,
+    autoplayTimeout: 3000,
+    smartSpeed: 1000,
+    slideTransition: 'linear',
+    autoplayHoverPause: true,
+    responsive: {
+      320: {
+        items: 2,
+      },
+      576: {
+        items: 3,
+        nav: false
+      },
+      769: {
+        items: 4,
+        nav: false
+      },
+      992: {
+        items: 5,
+        nav: true,
+      }
+    }
+  });
 });
 
 
@@ -197,7 +227,7 @@ const servicesAccordion = (listSelector, listItemsSelector) => {
   });
 };
 
-if(window.innerWidth < 769) {
+if (window.innerWidth < 769) {
   servicesAccordion('.services__subitems', '.services__item.has-subitem > .services__link');
 }
 
@@ -286,10 +316,10 @@ pageUp('.page-up');
 
 const padTopMain = (headerSelector, mainSelector) => {
   const header = document.querySelector(headerSelector),
-  main = document.querySelector(mainSelector),
-  headerHeight = header.offsetHeight;
-  if(!header) return false;
-  if(!main) return false;
+    main = document.querySelector(mainSelector),
+    headerHeight = header.offsetHeight;
+  if (!header) return false;
+  if (!main) return false;
 
   main.style.paddingTop = headerHeight + 'px';
 }
@@ -307,9 +337,9 @@ window.addEventListener('scroll', () => {
 
 const stickyHeader = (headerSelector) => {
   const header = document.querySelector(headerSelector),
-  topHead = header.querySelector('.top-head');
-  if(!header) return false;
-  if(!topHead) return false;
+    topHead = header.querySelector('.top-head');
+  if (!header) return false;
+  if (!topHead) return false;
 
   let start = window.pageYOffset;
 
@@ -323,3 +353,120 @@ const stickyHeader = (headerSelector) => {
   curPosition = start;
 
 }
+
+
+// image preview
+
+
+const previewImage = (imagesSelector, previewWindowSelector, previewContainerSelector, previewImgSelector,
+  btnCloseSelector, btnNextSelector, btnPrevSelector) => {
+  const images = document.querySelectorAll(imagesSelector),
+    previewWindow = document.querySelector(previewWindowSelector),
+    previewContainer = previewWindow.querySelector(previewContainerSelector),
+    previewImg = previewWindow.querySelector(previewImgSelector),
+    btnClose = previewWindow.querySelector(btnCloseSelector),
+    btnNext = previewWindow.querySelector(btnNextSelector),
+    btnPrev = previewWindow.querySelector(btnPrevSelector),
+    body = document.body;
+
+  let index = 0;
+
+  const treshold = 120,
+    allowedTime = 200;
+  let startX = 0,
+    startY = 0,
+    startTime = 0;
+
+  for (let i = 0; i < images.length; i++) {
+    const img = images[i];
+
+    img.addEventListener('click', () => {
+      index = i;
+      getImageURL(index);
+      body.classList.add('show');
+
+    })
+  }
+
+  btnNext.addEventListener('click', () => {
+    next();
+  })
+
+  btnPrev.addEventListener('click', () => {
+    prev();
+  })
+
+  previewImg.addEventListener('touchstart', (e) => {
+    const touchObj = e.changedTouches[0];
+    startX = touchObj.pageX;
+    startY = touchObj.pageY;
+    startTime = new Date().getTime();
+  }, {
+    passive: true
+  });
+
+  previewImg.addEventListener('touchend', (e) => {
+    const touchObj = e.changedTouches[0];
+    const dist = touchObj.pageX - startX;
+    const elapsedTime = new Date().getTime() - startTime;
+
+    if (Math.abs(touchObj.pageY - startY) < 100 &&
+      elapsedTime <= allowedTime &&
+      Math.abs(dist) >= treshold) {
+      const swiperRightBol = dist > 0;
+
+      if (swiperRightBol) {
+        prev();
+      } else {
+        next();
+      }
+
+    }
+  }, {
+    passive: true
+  });
+
+
+  btnClose.addEventListener('click', () => {
+    closePreview();
+  })
+
+  previewContainer.addEventListener('click', (e) => {
+    e.stopPropagation();
+  })
+
+  previewWindow.addEventListener('click', () => {
+    closePreview();
+  })
+
+  function getImageURL(index) {
+    let imageURL = images[index].getAttribute('src');
+    previewImg.src = imageURL;
+  }
+
+  function next() {
+    index++;
+    index %= images.length;
+    getImageURL(index);
+  }
+
+  function prev() {
+    index--;
+    if (index < 0) index = images.length - 1;
+    getImageURL(index);
+  }
+
+  function closePreview() {
+    body.classList.remove('show');
+  }
+}
+
+previewImage(
+  '.preview-link',
+  '.preview',
+  '.preview__container',
+  '.preview__img',
+  '.preview__close',
+  '.preview__btn--next',
+  '.preview__btn--prev'
+);
