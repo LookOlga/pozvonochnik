@@ -712,13 +712,13 @@ body.show .preview {
 
 body.menu-active .overlay {
   opacity: 1;
-  z-index: 10;
+  z-index: 100;
 }
 
 .page-up {
   position: fixed;
-  right: 4rem;
-  bottom: 4rem;
+  right: 3.5rem;
+  bottom: 3.5rem;
   opacity: 0;
   -webkit-transition: 0.33s ease;
   -o-transition: 0.33s ease;
@@ -728,8 +728,8 @@ body.menu-active .overlay {
 }
 
 .page-up svg {
-  width: 4.5rem;
-  height: 4.5rem;
+  width: 4rem;
+  height: 4rem;
   color: #367b87;
 }
 
@@ -1279,7 +1279,6 @@ section {
     height: 100vh;
     padding: 10rem 0 5rem;
     background-color: #e2f3fa;
-    z-index: 100;
     -webkit-transition: all 0.5s ease-in-out;
     -o-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
@@ -1298,6 +1297,7 @@ section {
     -webkit-transform: translateX(-100%);
         -ms-transform: translateX(-100%);
             transform: translateX(-100%);
+    z-index: 10;
   }
 
   .clinic {
@@ -1372,7 +1372,7 @@ section {
     margin-bottom: 5rem;
   }
 
-  .about__slider {
+  .about__slider-wrap {
     margin-bottom: 5rem;
   }
 
@@ -1501,8 +1501,12 @@ section {
     font-size: 2.8rem;
   }
 
+  .about__slider-wrap {
+    margin-bottom: 4rem;
+  }
+
   .about__slider {
-    height: 260px;
+    height: 230px;
   }
 
   .about__img {
@@ -1520,6 +1524,6 @@ section {
 
 @media (min-width: 769px) and (max-width: 1150px) {
   .about__slider-wrap {
-    margin-bottom: 4rem;
+    margin-bottom: 6rem;
   }
 }

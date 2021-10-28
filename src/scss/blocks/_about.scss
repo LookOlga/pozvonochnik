@@ -38,17 +38,16 @@
 @media (min-width: 769px) and (max-width: 1150px) {
     .about {
         &__slider-wrap {
-            margin-bottom: 4rem;
+            margin-bottom: 6rem;
         }
     }
 }
 
 @media (max-width: 769px) {
     .about {
-        &__slider {
+        &__slider-wrap {
             margin-bottom: 5rem;
         }
-
         &__btn {
             margin-top: 1rem;
         }
@@ -57,8 +56,12 @@
 
 @media (max-width: 480px) {
     .about {
+        &__slider-wrap {
+            margin-bottom: 4rem;
+        }
+
         &__slider {
-            height: 260px;
+            height: 230px;
         }
 
         &__img {
