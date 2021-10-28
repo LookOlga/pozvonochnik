@@ -1,4 +1,7 @@
 .map {
+    &__wrapper {
+        margin-bottom: -1rem;
+    }
     &__popup {
         position: absolute;
         width: 30px;

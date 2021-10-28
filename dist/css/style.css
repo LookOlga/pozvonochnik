@@ -275,6 +275,10 @@ ul {
       flex-wrap: wrap;
 }
 
+.map__wrapper {
+  margin-bottom: -1rem;
+}
+
 .map__popup {
   position: absolute;
   width: 30px;
