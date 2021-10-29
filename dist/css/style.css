@@ -804,6 +804,24 @@ body.menu-active .overlay {
   font-size: 1.8rem;
 }
 
+.contacts {
+  padding-top: 9rem;
+}
+
+.contacts__list,
+.contacts__item,
+.contacts__desc {
+  margin-bottom: 2rem;
+}
+
+.contacts__item {
+  font-size: 1.8rem;
+}
+
+.contacts__link {
+  font-weight: 500;
+}
+
 html {
   font-size: 10px;
 }
@@ -1447,6 +1465,10 @@ section {
     -webkit-transition: height 700ms ease-in-out;
     -o-transition: height 700ms ease-in-out;
     transition: height 700ms ease-in-out;
+  }
+
+  .contacts {
+    padding-top: 5rem;
   }
 
   section {

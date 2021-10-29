@@ -362,10 +362,10 @@ const previewImage = (imagesSelector, previewWindowSelector, previewContainerSel
   btnCloseSelector, btnNextSelector, btnPrevSelector) => {
   const images = document.querySelectorAll(imagesSelector),
     previewWindow = document.querySelector(previewWindowSelector);
-    if(!images) return false;
-    if(!previewWindow) return false;
+  if (!images) return false;
+  if (!previewWindow) return false;
 
-   const previewContainer = previewWindow.querySelector(previewContainerSelector),
+  const previewContainer = previewWindow.querySelector(previewContainerSelector),
     previewImg = previewWindow.querySelector(previewImgSelector),
     btnClose = previewWindow.querySelector(btnCloseSelector),
     btnNext = previewWindow.querySelector(btnNextSelector),
@@ -473,3 +473,5 @@ previewImage(
   '.preview__btn--next',
   '.preview__btn--prev'
 );
+
+
