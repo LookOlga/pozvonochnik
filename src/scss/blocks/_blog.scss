@@ -1,0 +1,49 @@
+.blog {
+    padding: 7rem 0;
+    background-color: $primary-bg;
+    &__container {
+        overflow: hidden;
+    }
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__item {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 4rem;
+    }
+    &__item-content {
+        flex-grow: 1;
+    }
+
+    &__img {
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        padding: 0 0 58% 0;
+        margin-bottom: 2rem;
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+@media(min-width: 900px) {
+    .blog {
+        &__list {
+            margin: 0 -4rem -4rem;
+        }
+        &__item {
+            width: calc(100% / 3 - 8rem);
+            margin-left: 4rem;
+            margin-right: 4rem;
+        }
+    }
+}

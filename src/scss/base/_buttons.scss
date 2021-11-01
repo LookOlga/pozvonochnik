@@ -31,6 +31,7 @@
     display: block;
     padding: 1rem 1.5rem;
     border-radius: 5px;
+    text-align: center;
     transition: 0.2 ease;
     &--primary {
         background-color: $secondary-text;
@@ -39,6 +40,10 @@
             background-color: darken($secondary-text, 7%);
         }
     }
-    
+}
 
+@media(max-width: 576px) {
+    .btn {
+        width: 100%;
+    }
 }
