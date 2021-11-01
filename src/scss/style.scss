@@ -36,6 +36,7 @@
 
 //inner page sections
 @import 'blocks/advant';
+@import 'blocks/reasons';
 
 //owl-carousel
 @import 'blocks/owl-carousel';
@@ -119,9 +120,9 @@ p {
     @extend %CLEAR-P;
 }
 
-svg, svg path {
-    fill: currentColor;
-}
+// svg, svg path{
+//     fill: currentColor;
+// }
 
 .container {
 	max-width: 140rem;

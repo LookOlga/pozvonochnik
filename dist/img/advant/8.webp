@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 120 120" enable-background="new 0 0 120 120" xml:space="preserve">
+<g>
+	<circle fill="#2D63BB" cx="60" cy="60" r="60"/>
+</g>
+<polygon fill="#FC3952" points="92.2,17.1 92.2,23.9 80.3,23.9 80.3,17.1 39.7,17.1 39.7,23.9 27.8,23.9 27.8,17.1 14.2,17.1 
+	14.2,35.8 105.8,35.8 105.8,17.1 "/>
+<polygon fill="#EDEADA" points="27.8,35.8 14.2,35.8 14.2,108.7 105.8,108.7 105.8,35.8 92.2,35.8 80.3,35.8 39.7,35.8 "/>
+<path fill="#CEC9AE" d="M77,47.6h-3.4H61.7h-3.4H46.4H43H27.8v15.3v3.4v11.9v3.4v15.3H43h3.4h11.9h3.4h11.9H77h15.3V81.5v-3.4V66.3
+	v-3.4V47.6H77z M61.7,51h11.9v11.9H61.7V51z M73.6,78.1H61.7V66.3h11.9V78.1z M46.4,66.3h11.9v11.9H46.4V66.3z M46.4,51h11.9v11.9
+	H46.4V51z M31.2,51H43v11.9H31.2V51z M31.2,66.3H43v11.9H31.2V66.3z M43,93.4H31.2V81.5H43V93.4z M58.3,93.4H46.4V81.5h11.9V93.4z
+	 M73.6,93.4H61.7V81.5h11.9V93.4z M88.8,93.4H77V81.5h11.9V93.4z M88.8,78.1H77V66.3h11.9V78.1z M77,62.9V51h11.9v11.9H77z"/>
+<rect x="27.8" y="10.3" fill="#28384C" width="11.9" height="13.6"/>
+<rect x="80.3" y="10.3" fill="#28384C" width="11.9" height="13.6"/>
+<rect x="61.7" y="66.3" fill="#26B99A" width="11.9" height="11.9"/>
+</svg>
