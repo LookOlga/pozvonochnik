@@ -134,6 +134,34 @@ ul {
   text-decoration: underline;
 }
 
+.btn-show {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.btn-show span {
+  position: relative;
+}
+
+.btn-show::before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10rem;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(10%, transparent), color-stop(35%, #ffffffc7), color-stop(50%, #fff));
+  background: -o-linear-gradient(transparent 10%, #ffffffc7 35%, #fff 50%);
+  background: linear-gradient(transparent 10%, #ffffffc7 35%, #fff 50%);
+}
+
+.btn-show.active::before {
+  opacity: 0;
+}
+
 .btn {
   display: block;
   padding: 1rem 1.5rem;
@@ -419,7 +447,8 @@ ul {
   font-weight: 400;
 }
 
-.services__item.has-subitem {
+.services__item.has-subitem,
+.services__item {
   color: #367b87;
   text-transform: uppercase;
   font-weight: 700;
@@ -461,6 +490,31 @@ ul {
 
 .license__link {
   cursor: pointer;
+}
+
+.fadeIn {
+  -webkit-animation: 3s fadeIn ease-in-out;
+          animation: 3s fadeIn ease-in-out;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0.3;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0.3;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 .footer {
