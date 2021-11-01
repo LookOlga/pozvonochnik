@@ -64,3 +64,19 @@
     }
 }
 
+//animation class 
+
+.fadeIn {
+    animation: 3s fadeIn ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 1;
+    }
+    
+}
+

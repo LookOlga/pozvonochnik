@@ -39,13 +39,16 @@ const textAccordion = (textAccordionSelector, btnShowSelector) => {
 
 
   btnShow.addEventListener('click', () => {
+    const btnText = btnShow.querySelector('span');
     if (!expanded) {
       textAccordionBlock.style.height = `${textAccordionBlock.scrollHeight}px`;
-      btnShow.innerHTML = 'Свернуть';
+      btnShow.classList.add('active');
+      btnText.textContent = 'Свернуть';
     } else {
       textAccordionBlock.style.height = `${textAccordionBlock.scrollHeight}px`;
       textAccordionBlock.style.height = startHeight;
-      btnShow.innerHTML = 'Подробнее';
+      btnShow.classList.remove('active');
+      btnText.textContent = 'Подробнее';
     }
     expanded = !expanded;
   })
@@ -149,10 +152,11 @@ $(function () {
     nav: false,
     autoplay: true,
     touchDrag: true,
-    autoplayTimeout: 25000,
+    autoplayTimeout: 6000,
     smartSpeed: 1,
     slideTransition: 'linear',
     autoplayHoverPause: true,
+    animateIn: 'fadeIn',
     responsive: {
       320: {
         items: 1,
@@ -473,5 +477,4 @@ previewImage(
   '.preview__btn--next',
   '.preview__btn--prev'
 );
-
 
