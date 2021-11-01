@@ -522,6 +522,36 @@ ul {
      object-fit: cover;
 }
 
+.reasons {
+  padding: 7rem 0;
+  background-color: #e2f3fa;
+}
+
+.reasons__container {
+  overflow: hidden;
+}
+
+.reasons__title {
+  margin-bottom: 7rem;
+}
+
+.reasons__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.reasons__item {
+  margin-bottom: 3rem;
+}
+
+.reasons__icon {
+  display: block;
+  margin: 0 auto 3rem;
+}
+
 .fadeIn {
   -webkit-animation: 3s fadeIn ease-in-out;
           animation: 3s fadeIn ease-in-out;
@@ -935,11 +965,6 @@ h6 {
   font-weight: 600;
 }
 
-svg,
-svg path {
-  fill: currentColor;
-}
-
 .container {
   max-width: 140rem;
   width: 100%;
@@ -949,6 +974,18 @@ svg path {
 
 section {
   margin-bottom: 9rem;
+}
+
+@media (min-width: 576px) {
+  .reasons__list {
+    margin: 0 -3rem -5rem;
+  }
+
+  .reasons__item {
+    width: calc(50% - 4rem);
+    margin-right: 2rem;
+    margin-left: 2rem;
+  }
 }
 
 @media (min-width: 769px) {
@@ -1208,6 +1245,16 @@ section {
     padding: 0 5rem;
   }
 
+  .reasons__list {
+    margin: 0 -3rem -5rem;
+  }
+
+  .reasons__item {
+    width: calc(33.3333333333% - 6rem);
+    margin-right: 3rem;
+    margin-left: 3rem;
+  }
+
   .doctors__item {
     width: calc(33.3333333333% - 4rem);
   }
@@ -1224,6 +1271,16 @@ section {
 
   .map__popup {
     width: 23.5vw;
+  }
+
+  .reasons__list {
+    margin: 0 -3rem -5rem;
+  }
+
+  .reasons__item {
+    width: calc(25% - 6rem);
+    margin-right: 3rem;
+    margin-left: 3rem;
   }
 }
 
