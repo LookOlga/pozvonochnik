@@ -64,6 +64,7 @@
 @import 'pages/contacts';
 @import 'pages/dental-services';
 @import 'pages/about-dental';
+@import 'pages/article';
 
 
 
@@ -134,12 +135,12 @@ svg, svg path{
 	margin: 0 auto;
 }
 
-section {
+section, article {
 	margin-bottom: 9rem;
 }
 
 @media(max-width: 769px) {
-	section {
+	section, article {
 		margin-bottom: 5rem;
 	}
 }

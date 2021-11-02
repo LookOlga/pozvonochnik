@@ -1115,6 +1115,10 @@ body.menu-active .overlay {
   background-color: rgba(0, 0, 0, 0.7);
 }
 
+.article {
+  margin-top: 9rem;
+}
+
 html {
   font-size: 10px;
 }
@@ -1156,7 +1160,8 @@ svg path {
   margin: 0 auto;
 }
 
-section {
+section,
+article {
   margin-bottom: 9rem;
 }
 
@@ -1496,6 +1501,21 @@ section {
     margin-right: 3rem;
     margin-left: 3rem;
   }
+
+  .article__img {
+    width: 40rem;
+    height: 30rem;
+  }
+
+  .article__img--right {
+    float: right;
+    margin: 1rem 0 1rem 2rem;
+  }
+
+  .article__img--left {
+    float: left;
+    margin: 1rem 2rem 1rem 0;
+  }
 }
 
 @media (min-width: 1400px) {
@@ -1541,6 +1561,14 @@ section {
     -webkit-transform: scale(1.5);
         -ms-transform: scale(1.5);
             transform: scale(1.5);
+  }
+
+  .article {
+    margin-top: 5rem;
+  }
+
+  .article__img {
+    margin: 2rem 0;
   }
 }
 
@@ -1852,7 +1880,8 @@ section {
     padding-top: 5rem;
   }
 
-  section {
+  section,
+  article {
     margin-bottom: 5rem;
   }
 
