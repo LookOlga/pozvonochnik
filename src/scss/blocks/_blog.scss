@@ -33,6 +33,10 @@
             object-fit: cover;
         }
     }
+
+    &--no-bg {
+        background-color: transparent;
+    }
 }
 
 @media(min-width: 900px) {
