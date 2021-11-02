@@ -1,0 +1,90 @@
+.about-dental {
+    margin-top: 7rem;
+    &__container {
+        overflow: hidden;
+    }
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    &__photo {
+        width: 30%;
+        flex-grow: 1;
+        margin-bottom: 3rem;
+        img {
+            margin-bottom: 2rem;
+        }
+    }
+    &__desc {
+        flex-grow: 1;
+        min-width: 35rem;
+    }
+    &__name {
+        font-weight: 600;
+        font-size: 2rem;
+    }
+    &__name, &__label {
+        text-align: center;
+    }
+    &__gallery {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__img {
+        position: relative;
+        overflow: hidden;
+        height: 35rem;
+        cursor: pointer;
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+
+@media(min-width: 992px) {
+    .about-dental {
+        &__desc {
+            width: calc(70% - 10rem);
+            margin-left: 10rem;
+        }
+        &__gallery {
+            margin: 7rem -1rem -2rem;
+        }
+        &__img {
+            width: calc(100% / 3 - 2rem);
+            margin: 0 1rem 2rem;
+        }
+    }
+    
+}
+
+@media(max-width: 992px) {
+    .about-dental {
+        &__gallery {
+            margin: 7rem -1rem -2rem;
+        }
+        &__img {
+            width: calc(100% / 2 - 2rem);
+            margin: 0 1rem 2rem;
+        }
+    }
+}
+
+@media(max-width: 650px) {
+    .about-dental {
+        &__img {
+            width: 100%;
+        }
+    }
+}
+
+
+
