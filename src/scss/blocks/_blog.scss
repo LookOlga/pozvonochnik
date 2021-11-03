@@ -1,6 +1,5 @@
 .blog {
-    padding: 7rem 0;
-    background-color: $primary-bg;
+    margin-top: 9rem;
     &__container {
         overflow: hidden;
     }
@@ -49,5 +48,11 @@
             margin-left: 4rem;
             margin-right: 4rem;
         }
+    }
+}
+
+@media(max-width: 769px) {
+    .blog {
+        margin-top: 5rem;
     }
 }

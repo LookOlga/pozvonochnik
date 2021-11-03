@@ -1,5 +1,5 @@
 .about-dental {
-    margin-top: 7rem;
+    margin-top: 9rem;
     &__container {
         overflow: hidden;
     }
@@ -88,6 +88,11 @@
     }
 }
 
+@media(max-width: 769px) {
+    .about-dental {
+        margin-top: 5rem;
+    }
+}
 @media(max-width: 650px) {
     .about-dental {
         &__img {

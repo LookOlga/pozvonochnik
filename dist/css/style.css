@@ -554,8 +554,7 @@ ul {
 }
 
 .blog {
-  padding: 7rem 0;
-  background-color: #e2f3fa;
+  margin-top: 9rem;
 }
 
 .blog__container {
@@ -1031,7 +1030,7 @@ body.menu-active .overlay {
 }
 
 .about-dental {
-  margin-top: 7rem;
+  margin-top: 9rem;
 }
 
 .about-dental__container {
@@ -1946,6 +1945,10 @@ article {
     margin-bottom: 3rem;
   }
 
+  .blog {
+    margin-top: 5rem;
+  }
+
   .footer__link {
     padding: 0.5rem 0;
   }
@@ -1972,6 +1975,10 @@ article {
 
   .contacts {
     padding-top: 5rem;
+  }
+
+  .about-dental {
+    margin-top: 5rem;
   }
 
   .doctor {
