@@ -1124,8 +1124,8 @@ body.menu-active .overlay {
   display: -ms-flexbox;
   display: flex;
   margin-bottom: 4rem;
-  padding-bottom: 4rem;
-  border-bottom: 2px solid #e2f3fa;
+  padding: 4rem;
+  background-color: #e2f3fa;
 }
 
 .doctor__photo {
@@ -1133,13 +1133,13 @@ body.menu-active .overlay {
 }
 
 .doctor__name {
-  color: #367b87;
   text-transform: uppercase;
   font-size: 3rem;
   font-weight: 600;
 }
 
 .doctor__prof {
+  color: #367b87;
   font-size: 2rem;
 }
 
@@ -1173,6 +1173,10 @@ body.menu-active .overlay {
   color: #666;
   font-weight: 600;
   text-transform: uppercase;
+}
+
+.doctor__item-desc {
+  color: #999;
 }
 
 html {

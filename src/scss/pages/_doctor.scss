@@ -2,19 +2,19 @@
     &__head {
         display: flex;
         margin-bottom: 4rem;
-        padding-bottom: 4rem;
-        border-bottom: 2px solid $primary-bg;
+        padding: 4rem;
+        background-color: $primary-bg;
     }
     &__photo {
         height: 400px;
     }
     &__name {
-        color: $secondary-text;
         text-transform: uppercase;
         font-size: 3rem;
         font-weight: 600;
     }
     &__prof {
+        color: $secondary-text;
         font-size: 2rem;
     }
     &__block {
@@ -44,6 +44,9 @@
         color: #666;
         font-weight: 600;
         text-transform: uppercase;
+    }
+    &__item-desc {
+        color: #999;
     }
 }
 @media(min-width: 769px) {
