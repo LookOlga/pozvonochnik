@@ -1,0 +1,89 @@
+.doctor {
+    &__head {
+        display: flex;
+        margin-bottom: 4rem;
+        padding-bottom: 4rem;
+        border-bottom: 2px solid $primary-bg;
+    }
+    &__photo {
+        height: 400px;
+    }
+    &__name {
+        color: $secondary-text;
+        text-transform: uppercase;
+        font-size: 3rem;
+        font-weight: 600;
+    }
+    &__prof {
+        font-size: 2rem;
+    }
+    &__block {
+        border-bottom: 2px solid $primary-bg;
+        margin-bottom: 4rem;
+        padding-bottom: 4rem;
+        &:last-child {
+            margin-bottom: 0;
+            border-bottom: transparent;
+        }
+    }
+    &__item {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__subtitle {
+        font-size: 2.2rem;
+        color: $secondary-text;
+        text-transform: uppercase;
+    }
+
+    &__item-title {
+        color: #666;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+}
+@media(min-width: 769px) {
+    .doctor {
+        margin-top: 9rem;
+        &__head {
+            align-items: center;
+        }
+        &__main {
+            display: flex;
+        }
+        &__spec, &__photo {
+            width: 30%;
+        }
+        &__spec {
+            padding-right: 4rem;
+        }
+        &__blocks {
+            padding-left: 4rem;
+            border-left: 2px solid $primary-bg; 
+        }
+        &__photo {
+            margin-right: 4rem;
+        }
+    }
+}
+
+@media(max-width: 769px) {
+    .doctor {
+        margin-top: 5rem;
+        &__head {
+            flex-direction: column;
+        }
+        &__photo {
+            margin-bottom: 4rem;
+        }
+        &__spec {
+            margin-bottom: 4rem;
+            padding-bottom: 4rem;
+            border-bottom: 2px solid $primary-bg;
+        }
+    }
+}

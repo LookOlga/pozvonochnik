@@ -1119,6 +1119,62 @@ body.menu-active .overlay {
   margin-top: 9rem;
 }
 
+.doctor__head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 4rem;
+  padding-bottom: 4rem;
+  border-bottom: 2px solid #e2f3fa;
+}
+
+.doctor__photo {
+  height: 400px;
+}
+
+.doctor__name {
+  color: #367b87;
+  text-transform: uppercase;
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+.doctor__prof {
+  font-size: 2rem;
+}
+
+.doctor__block {
+  border-bottom: 2px solid #e2f3fa;
+  margin-bottom: 4rem;
+  padding-bottom: 4rem;
+}
+
+.doctor__block:last-child {
+  margin-bottom: 0;
+  border-bottom: transparent;
+}
+
+.doctor__item {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}
+
+.doctor__item:last-child {
+  margin-bottom: 0;
+}
+
+.doctor__subtitle {
+  font-size: 2.2rem;
+  color: #367b87;
+  text-transform: uppercase;
+}
+
+.doctor__item-title {
+  color: #666;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
 html {
   font-size: 10px;
 }
@@ -1422,6 +1478,40 @@ article {
 
   .footer__right small {
     font-size: 1.2rem;
+  }
+
+  .doctor {
+    margin-top: 9rem;
+  }
+
+  .doctor__head {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .doctor__main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .doctor__spec,
+  .doctor__photo {
+    width: 30%;
+  }
+
+  .doctor__spec {
+    padding-right: 4rem;
+  }
+
+  .doctor__blocks {
+    padding-left: 4rem;
+    border-left: 2px solid #e2f3fa;
+  }
+
+  .doctor__photo {
+    margin-right: 4rem;
   }
 
   .isMobile {
@@ -1878,6 +1968,27 @@ article {
 
   .contacts {
     padding-top: 5rem;
+  }
+
+  .doctor {
+    margin-top: 5rem;
+  }
+
+  .doctor__head {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .doctor__photo {
+    margin-bottom: 4rem;
+  }
+
+  .doctor__spec {
+    margin-bottom: 4rem;
+    padding-bottom: 4rem;
+    border-bottom: 2px solid #e2f3fa;
   }
 
   section,
