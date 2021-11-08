@@ -870,6 +870,19 @@ body.show .preview {
   transition: all 0.3s ease;
 }
 
+.preview-link {
+  -webkit-transition: 0.33s ease;
+  -o-transition: 0.33s ease;
+  transition: 0.33s ease;
+}
+
+.preview-link:hover {
+  cursor: -webkit-zoom-in;
+  cursor: zoom-in;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
+
 .overlay {
   position: fixed;
   top: 0;
