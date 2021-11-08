@@ -87,3 +87,11 @@ body.show {
         transition: all 0.3s ease;
     }
 }
+
+.preview-link {
+    transition: 0.33s ease;
+    &:hover {
+        cursor: zoom-in;
+        filter: grayscale(100%);
+     }
+}
