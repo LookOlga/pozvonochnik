@@ -293,7 +293,7 @@ ul {
 
 .head-map {
   background-color: #e2f3fa;
-  padding: 7rem 0;
+  padding: 4rem 0;
 }
 
 .head-map__container {
@@ -304,17 +304,12 @@ ul {
       flex-wrap: wrap;
 }
 
-.map__wrapper {
-  margin-bottom: -1rem;
-}
-
 .map__popup {
   position: absolute;
-  width: 30px;
-  min-width: 250px;
+  min-width: 25rem;
   padding: 3rem;
   background-color: #fff;
-  border-radius: 10px;
+  border-radius: 1rem;
   border: 1px solid #e2f3fa;
   opacity: 0;
   visibility: hidden;
@@ -372,24 +367,31 @@ ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  margin: 0 -2rem;
+  overflow: hidden;
 }
 
 .stat__item {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 100px;
           flex: 1 1 100px;
-  margin: 0 3rem 2rem 0;
-}
-
-.stat__item:last-child {
-  margin-right: 0;
+  margin: 0 2rem;
 }
 
 .stat__num {
   font-size: 4.5rem;
   margin-bottom: 5px;
+}
+
+.stat-4 {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.stat-4 .stat__item {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 40%;
+          flex: 1 1 40%;
 }
 
 .call__form {
@@ -1238,6 +1240,11 @@ article {
 }
 
 @media (min-width: 576px) {
+  .stat-1 .stat__num,
+  .stat-2 .stat__num {
+    font-size: 6rem;
+  }
+
   .reasons__list {
     margin: 0 -3rem -5rem;
   }
@@ -1335,8 +1342,21 @@ article {
     margin-bottom: 12rem;
   }
 
+  .map__wrapper {
+    margin-bottom: -4rem;
+  }
+
   .map__popup {
     width: 360px;
+  }
+
+  .map__popup.loaded-active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .map__btn.loaded-active path {
+    fill: #ff7b0f;
   }
 
   .call__container {
@@ -1905,6 +1925,18 @@ article {
     margin-bottom: 5rem;
   }
 
+  .map__popup.visible-center {
+    max-width: 35rem;
+    width: 100%;
+    opacity: 1;
+    visibility: visible;
+    top: 75% !important;
+    left: 50% !important;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+
   .about__slider-wrap {
     margin-bottom: 5rem;
   }
@@ -2026,17 +2058,6 @@ article {
 }
 
 @media (max-width: 650px) {
-  .map__popup.visible-center {
-    width: 100%;
-    opacity: 1;
-    visibility: visible;
-    top: 75% !important;
-    left: 50% !important;
-    -webkit-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
-            transform: translateX(-50%);
-  }
-
   .about-dental__img {
     width: 100%;
   }
@@ -2098,6 +2119,15 @@ article {
     -webkit-transition: height 700ms ease-in-out;
     -o-transition: height 700ms ease-in-out;
     transition: height 700ms ease-in-out;
+  }
+}
+
+@media (max-width: 414px) {
+  .stat-3 {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
 
