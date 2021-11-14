@@ -1,12 +1,10 @@
 .stat {
     display: flex;
-    flex-wrap: wrap;
+    margin: 0 -2rem;
+    overflow: hidden;
     &__item {
         flex: 1 1 100px;
-        margin: 0 3rem 2rem 0;
-        &:last-child {
-            margin-right: 0;
-        }
+        margin: 0 2rem;
     }
     &__num {
         font-size: 4.5rem;
@@ -19,5 +17,26 @@
         &__item {
             flex: 1 1 40%;
         }
+    }
+}
+
+@media(min-width: 576px) {
+    .stat-1, .stat-2 {
+        .stat__num {
+            font-size: 6rem;
+        }  
+    }
+}
+
+@media(max-width: 414px) {
+    .stat-3 {
+        flex-direction: column;
+    }
+}
+
+.stat-4 {
+    flex-wrap: wrap;
+    .stat__item {
+        flex: 1 1 40%;
     }
 }

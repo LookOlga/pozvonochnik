@@ -235,10 +235,32 @@ if (window.innerWidth < 769) {
   servicesAccordion('.services__subitems', '.services__item.has-subitem > .services__link');
 }
 
-const mapPopup = (mapSelector, mapBtnClass) => {
+const mapPopup = (mapSelector, mapBtnClass, popupActive, btnActive) => {
   const map = document.querySelector(mapSelector);
-  if (!map) return false;
+  const mapPopupActive = document.querySelector(popupActive);
+  const mapBtnActive = document.querySelector(btnActive);
   let visible = false;
+
+  if (!map) return false;
+  if (!mapPopupActive) return false;
+  if (!mapBtnActive) return false;
+
+  const setPopupActive = (popup, btn) => {
+      const top = btn.getBoundingClientRect().top;
+      const right = btn.getBoundingClientRect().right;
+  
+      popup.style.top = top - 100 + 'px';
+      popup.style.left = right + 20 + 'px'; 
+  }
+
+if(window.innerWidth > 769) {
+  setPopupActive(mapPopupActive, mapBtnActive);
+  window.addEventListener('resize', () => {
+    setPopupActive(mapPopupActive, mapBtnActive)
+  });
+}
+
+
   map.addEventListener('mouseover', (e) => {
     mapPopupOnOff(e, true);
   })
@@ -252,39 +274,54 @@ const mapPopup = (mapSelector, mapBtnClass) => {
     const mapBtn = target.parentElement;
     if (!mapBtn) return false;
 
+    const popupId = mapBtn.getAttribute('data-popup');
+    if (!popupId) return false;
+    const mapPopup = document.querySelector(`#${popupId}`);
+
+   if(window.innerWidth > 769) {
+    if (mapPopup.classList.contains('loaded-active')) {
+      return false;
+    }
+   }
+
     let coordX = e.pageX;
     let coordY = e.pageY;
 
     visible = visibilityValue;
+    const setPopupPosition = (popup, visibilityClass, mapPosition) => {
+      if (visibilityValue) {
+        if (!popup) return false;
+        map.style.position = mapPosition;
+        mapBtn.classList.add('active');
+        popup.classList.add(visibilityClass);
+      } else {
+        popup.classList.remove(visibilityClass);
+        mapBtn.classList.remove('active');
+      }
+    }
 
     if (mapBtn.classList.contains(mapBtnClass)) {
-      const popupId = mapBtn.getAttribute('data-popup');
-      const mapPopup = document.querySelector(`#${popupId}`);
-      if (window.innerWidth < 650) {
-        setPopupPosition(visible, 'visible-center', 'relative');
+      if (window.innerWidth < 769) {
+        setPopupPosition(mapPopup, 'visible-center', 'relative')
       } else {
-        mapPopup.style.top = coordY + 'px';
-        mapPopup.style.left = coordX + 'px';
-        setPopupPosition(visible, 'visible', 'static');
-      }
-
-      function setPopupPosition(visibilityValue, visibilityClass, mapPosition) {
-        if (visibilityValue) {
-          if (!mapPopup) return false;
-          map.style.position = mapPosition;
-          mapBtn.classList.add('active');
-          mapPopup.classList.add(visibilityClass);
+        if(mapPopup.getAttribute('id') === 'diabet') {
+          const top = mapBtn.getBoundingClientRect().top;
+          const left = mapBtn.getBoundingClientRect().left;
+    
+          mapPopup.style.top = top - mapPopup.clientHeight + 25 + 'px';
+          mapPopup.style.left = left - mapPopup.clientWidth + 'px';
         } else {
-          mapPopup.classList.remove(visibilityClass);
-          mapBtn.classList.remove('active');
+          mapPopup.style.top = coordY + 'px';
+          mapPopup.style.left = coordX + 'px';
         }
+        setPopupPosition(mapPopup, 'visible', 'static');
       }
     }
 
   }
 }
 
-mapPopup('.map', 'map__btn');
+mapPopup('.map', 'map__btn', '.map__popup.loaded-active', '.map__btn.loaded-active');
 
 // pageup
 

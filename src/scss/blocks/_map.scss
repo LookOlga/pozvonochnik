@@ -1,14 +1,10 @@
 .map {
-    &__wrapper {
-        margin-bottom: -1rem;
-    }
     &__popup {
         position: absolute;
-        width: 30px;
-        min-width: 250px;
+        min-width: 25rem;
         padding: 3rem;
         background-color: #fff;
-        border-radius: 10px;
+        border-radius: 1rem;
         border: 1px solid $primary-bg;
         opacity: 0;
         visibility: hidden;
@@ -78,8 +74,22 @@
 
 @media(min-width: 769px) {
     .map {
+        &__wrapper {
+            margin-bottom: -4rem;
+        }
         &__popup {
             width: 360px;
+        }
+    }
+
+    .map__popup.loaded-active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .map__btn.loaded-active {
+        path {
+            fill: #ff7b0f;
         }
     }
 }
@@ -89,8 +99,9 @@
     visibility: visible;
 }
 
-@media(max-width: 650px) {
+@media(max-width: 769px) {
     .map__popup.visible-center {
+        max-width: 35rem;
         width: 100%;
         opacity: 1;
         visibility: visible;

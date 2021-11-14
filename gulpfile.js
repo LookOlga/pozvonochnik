@@ -89,9 +89,9 @@ function js() {
 	return src(path.src.js)
 		.pipe(fileinclude())
 		.pipe(dest(path.build.js))
-		.pipe(
-			uglify()
-		)
+		// .pipe(
+		// 	uglify()
+		// )
 		.on('error', function (err) { console.log(err.toString()); this.emit('end'); })
 		.pipe(
 			rename({
