@@ -14,6 +14,10 @@
             height: 100%;
         }
     }
+
+    &::after {
+        @include DECORATION-AFTER;
+    }
 }
 
 @media (min-width: 769px) {
