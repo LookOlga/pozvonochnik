@@ -1243,6 +1243,7 @@ h6 {
 svg,
 svg path {
   fill: currentColor;
+  pointer-events: none;
 }
 
 .container {

@@ -5,8 +5,15 @@
 const dropdownActive = (btnSelector, activeClass) => {
   const btn = document.querySelector(btnSelector);
   if (!btn) return false;
+
   btn.addEventListener('click', () => {
-    document.body.classList.toggle(activeClass);
+      document.body.classList.toggle(activeClass);
+  })
+  document.body.addEventListener('click', (e) => {
+    const target = e.target;
+    if(target !== btn) {
+      document.body.classList.remove(activeClass);
+    }
   })
 }
 
@@ -514,7 +521,6 @@ previewImage(
   '.preview__btn--next',
   '.preview__btn--prev'
 );
-
 
 
 

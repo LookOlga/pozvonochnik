@@ -128,6 +128,7 @@ p {
 
 svg, svg path{
     fill: currentColor;
+    pointer-events: none;
 }
 
 .container {
