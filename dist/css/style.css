@@ -1243,7 +1243,6 @@ h6 {
 svg,
 svg path {
   fill: currentColor;
-  pointer-events: none;
 }
 
 .container {
@@ -1819,6 +1818,7 @@ article {
     width: 2.5rem;
     height: 2.5rem;
     color: #002c40;
+    pointer-events: none;
   }
 
   .top-head__phones {
